@@ -1,0 +1,51 @@
+@media(max-width:1024px){
+
+    .modal{
+        position: absolute;
+        top: 0;
+        left: -150rem;
+        transition: left 0.5s ease-in-out;
+        padding: 1rem;
+        height: 100%;
+        overflow-x: auto;
+        z-index: 1000;
+    }
+
+    #button-close-phone{
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 3rem;
+        background-image: url('../../assets/img/close-button.svg');
+        background-repeat: no-repeat;
+        background-size: contain;  
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+    }
+
+    .modal .container-preview{
+        flex-direction: column;
+    }
+
+    .modal .container-preview nav ul{
+        display: flex;
+        flex-direction:  column;
+        padding: 0 1rem;
+    }
+
+    .modal .container-preview nav ul li{
+        height: 1.5em;
+        cursor:default;
+        transition: height 0.5s ease-in-out;
+    }
+
+    .modal .container-preview .container-relevants{
+        display: none;
+    }
+
+    .container-menuModal-phone{
+        display: block;
+        border-top: 1px solid #3D3D3D;
+    }
+}

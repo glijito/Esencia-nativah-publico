@@ -1,0 +1,399 @@
+/****************SECCION HEORE BANNER **************/
+
+section.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('../../assets/img/fon_piedra_beige.png') no-repeat center center / cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+article {
+  text-align: center;
+  color: #d9d5cc;
+}
+
+.hero article #title-heroe{
+  font-size: 7em;
+  width: max-content;
+  letter-spacing: 13px;
+  margin: 0 auto;
+}
+
+.contrainer-text-hero-phone{
+  display: none;
+}
+
+article figure {
+  margin: 40px auto;
+}
+
+article figure img {
+  width: 350px;
+}
+
+article .descripcion-desktop {
+    position: absolute;
+    top: 73%;
+    left: 6.5em;
+    font-size: 17px;
+    line-height: 1.5;
+    width: 300px ;
+    text-align: left;
+    color: #d9d5cc;
+    z-index: 2;
+}
+
+article .descripcion-phone {
+    display: none;
+}
+
+section.hero > footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 6.8em;
+  margin-top: 1em;
+  border-top: 1px solid white;
+}
+  
+footer .explorar {
+  font-size: 17px;
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: #B52D88;
+  transition: all 0.3s ease;
+}
+
+footer .explorar:hover {
+  color: #B52D88;
+}
+
+footer nav.slider {
+  display: flex;
+  gap: 10px;
+}
+
+footer nav.slider button {
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+
+/****************SECCION CARRUSEL **************/
+
+  section.colecciones-destacadas {
+    padding: 60px 6.8em;
+    background: white;
+  }
+  
+  .colecciones-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .colecciones-header #header-coleccion {
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+    letter-spacing: 2px;
+  }
+  
+  .colecciones-header .controles {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .colecciones-header .controles button {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .slider-productos {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+  }
+  
+  .producto {
+    flex: 0 0 250px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1px solid transparent; 
+  }
+  
+  .producto figure {
+    width: 100%;
+    margin: 0 0 15px 0;
+  }
+  
+  .producto figure img {
+    width: 22em;
+    height: 32em;
+  }
+  
+  .producto h3,
+  .producto .descripcion-item,
+  .producto .precio,
+  .producto .boton-comprar {
+    padding: 0 10px;
+    text-align: left;
+  }
+  
+  .producto h3 {
+    font-size: 18px;
+    color: #3D3D3D;
+    font-weight: 400;
+    margin: 10px 0;
+  }
+  
+  .producto .descripcion-item {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .producto .precio {
+    font-size: 16px;
+    color: #3D3D3D;
+    margin-bottom: 15px;
+  }
+  
+  .boton-explorar {
+    font-weight: lighter;
+    transition: background 0.3s;
+    margin: 0 auto 8px auto;
+    text-decoration: none;
+    background: #232323;
+    text-align: center;
+    font-size: 19px;
+    padding: 10px 0;
+    display: block;
+    color: #E4DFD5;
+    width: 100%; 
+  }
+  
+  .boton-explorar:hover {
+    background: #333;
+  }
+  
+  .boton-comprar {
+    font-size: 12px;
+    width: max-content;
+    text-decoration: none;
+    color: #B52D88;
+    margin-top: 5px;
+  }
+
+  .boton-comprar:hover{
+    text-decoration: underline;
+  }
+
+  .controles button{
+    transition: opacity 0.3s;
+  }
+
+
+  button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  /****************SECCION HERO BANNER - 2 **************/
+
+
+  .joyas-historias {
+    background-image: url('../../assets/img/artesano_historia.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 180px 20px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .contenedor-texto {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .joyas-historias h3 {
+    font-size: 5em;
+    font-weight: 300;
+    color: #FFFFFF; 
+    margin-bottom: 20px;
+  }
+  
+  .diamante {
+    width: 10px;
+    height: 10px;
+    background-color: #B52D88;
+    margin: 0 auto 20px auto;
+    transform: rotate(45deg);
+  }
+
+  .contenedor-texto{
+      width: max-content;
+      height: max-content;
+      margin: 0 auto;
+  }
+  
+  .contenedor-texto p{
+    font-size: 2.5em;
+    line-height: 1;
+    margin:0;
+    margin-bottom: 0.3em;
+    color: #EFEBE4
+  }
+  
+  .contenedor-texto p:nth-child(3) {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+
+    /****************SECCION HERO BANNER - 3 **************/
+
+    /* === Mosaico superior === */
+    .mosaico-superior {
+        background-image: url('../../assets/img/logo_NAtivah_largo_fondo_blanco.svg');
+        background-repeat: repeat-x;
+        background-position: center;
+        background-size: auto 65px; 
+        height: 100px;
+        background-color: white;
+    }
+
+  /* === Hero dividido  === */
+    .disenos-renacen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: white;
+        padding: 0;
+    }
+
+    .contenedor-hero {
+        display: flex;
+        width: 100%;
+        background-image: url('../../assets/img/mujer_con_joyas.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 600px; 
+    }
+
+    .columna-imagen {
+        flex: 1;
+    }
+
+    .columna-texto {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 40px;
+    }
+
+    .columna-texto p:nth-child(1) {
+        font-weight: 600;
+        font-size: 40px;
+        color: #EFEBE4; 
+        margin-bottom: 22px;
+    }
+
+    .columna-texto p:nth-child(2) {
+      font-size: 16px;
+      color: #EFEBE4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .columna-texto p:nth-child(3) {
+      font-size: 16px;
+      line-height: 1;
+      color: #EFEBE4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .columna-texto strong {
+        font-weight: bold;
+    }
+
+    .boton-pedir {
+        margin-top: 30px;
+        background: #232323;
+        color: #EFEBE4;
+        padding: 12px 60px;
+        text-decoration: none;
+        font-size: 14px;
+        display: inline-block;
+        transition: background 0.3s;
+    }
+
+    .boton-pedir:hover {
+        background: #333;
+    }
+
+  /**************** ARTICULOS RELEVANTES **************/
+
+  .disenos-unicos {
+    background-color: white;
+    text-align: center;
+    padding: 50px 6.8em;
+  }
+
+  .disenos-unicos header{
+    margin-bottom: 50px;
+  }
+  
+  #title-disenos {
+    font-size: 40px;
+    margin: 0;
+    font-weight: bold;
+    color: #B52D88;
+  }
+  
+  .contenedor-cards {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+  }
+  
+  .card img {
+    width: auto;
+    height: 29em;
+  }
+  
+  .card p {
+    font-size: 20px;
+    font-weight:400;
+    width: 10em;
+    color: #3c3c3b;
+    margin-top: 15px;
+  }

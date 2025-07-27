@@ -1,0 +1,133 @@
+@media(max-width:480px) {
+
+    .items-shop{
+        display: none;
+    }
+
+    .detail-product-container .container-items{
+        flex-direction: column;
+    }
+
+    .detail-product-container .container-items #container-information-product{
+        order: 1;
+        width: 90vw;
+        margin:1em;
+    }
+
+   .container-items #container-information-product .container-item-desktop{
+        display: none;
+    }
+
+    .information-relevant{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #title-item{
+        font-size: 1rem;
+    }
+
+    #container-information-product .subtitle-item{
+        font-size: 0.6rem;
+    }
+
+    #price-item{
+        display: none;
+    }
+
+    .id-talla-pieza-desktop{
+        display: none;
+    }
+
+    .id-talla-pieza-phone{
+        display: block;
+    }
+
+    .id-talla-pieza-phone #title-talla{
+        color: #232323;
+        opacity: 0.7;
+    }
+
+    .container-items #container-images-product-desktop{
+        display: none;
+    }
+
+    .container-items #container-images-product-phone{
+        order: 2;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .producto-principal{
+        width: 100vw;
+        height: 25rem;
+    }
+
+    .container-secundary-images {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .producto-secundary{
+        width: 8rem;
+        height: 8rem;
+        margin: 0.25rem;
+    }
+
+    .container-item-phone{
+        order: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin: 0 1.2rem;
+    }
+
+    .container-item-phone .price-product{
+        font-size: 1rem;
+        font-weight: bold;
+        color: #C52462;
+    }
+
+    .container-item-phone .information-relevant{
+        font-size: 0.6rem;
+        margin: 0;
+        color: #241F1E;
+    }
+
+    .container-item-phone .container-buttons button:nth-child(2){
+       background-color: white;
+       border: 1px solid black;
+       margin-top: 1rem;
+       color: black;
+    }
+
+    .container-item-phone .container-descripcion-product{
+        width: 100%;
+        margin: 0;
+        margin-top: 1rem;
+    }
+
+    .item-list-information{
+        width: 95%;
+    }
+
+    .container-buttons{
+        width: 95%;
+        margin: 0;
+        margin-top: 1rem;
+    }
+
+
+    /*********** PRODCUTOS DE INTERES ************/
+
+    .product-card{
+        width: 150px;
+    }
+
+    .container-products-section header h2{
+        font-size: 1.2rem;
+    }
+}

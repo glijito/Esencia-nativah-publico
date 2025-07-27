@@ -1,0 +1,161 @@
+/****************** DETALLE DEL PRODUCTO  *******************/
+
+.detail-product-container{
+    width: max-content;
+    margin: 1rem auto;
+}
+
+.detail-product-container .container-items{
+    display: flex;
+    flex-direction: row;
+}
+
+.container-items #container-images-product-desktop{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem
+}
+
+#container-images-product-phone{
+    display: none;
+}
+
+.container-items #container-images-product-desktop img{
+    width: 32.5rem;
+    height: 100%;
+}
+
+.container-items #container-information-product{
+    display: flex;
+    flex-direction: column;
+    width: 18rem;
+    margin-left: 2rem;
+}
+
+#container-information-product .subtitle-item{
+    opacity: 0.5;
+    color: #232323;
+    font-size: 0.8rem;
+    margin: 0 0;
+}
+
+#title-item{
+    font-size: 1.3rem;
+    color: #232323;
+    margin: 0.8rem 0;
+}
+
+#price-item{
+    font-size: 1rem;
+    color: #232323;
+    margin: 0.8rem 0;
+}
+
+#img-talla{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../../assets/img/rombo_para_medidas.svg);
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-size: contain;
+    height: 3rem;
+    width: 3rem;
+}
+
+#img-talla p{
+    font-size: 0.5rem;
+    color: white;
+}
+
+#title-talla{
+    font-size: 0.9rem;
+    color: #232323;
+    opacity: 0.5;
+}
+
+.id-talla-pieza-phone{
+    display: none;
+}
+
+.container-buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.container-buttons button{
+    width: 100%;
+    height: 2rem;
+    background-color: #232323;
+    color: white;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+}
+
+.container-buttons p{
+    font-size: 0.9rem;
+    color: #241F1E;
+    width: max-content;
+    border-bottom: 1px solid #C52462;
+    cursor: pointer;
+}
+
+.container-descripcion-product{
+    margin-top: 1.5rem;
+}
+
+.item-list-information{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #707070;
+}
+
+.item-list-information p{
+    font-size: 1rem;
+    color: #232323;
+}
+
+.item-list-information img{
+    width: 1.2rem;
+    height: 1.5rem; 
+    cursor: pointer;
+}
+
+.container-item-phone{
+    display: none;
+}
+
+
+/****************** PRODUCTOS RELACIONADOS *******************/
+
+.container-products-section{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 1.1rem;
+}
+
+.container-product-list{
+    display:flex;
+    flex-direction: row; 
+    overflow-x: auto;          
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch; 
+}
+
+.product-card{
+    display: flex;
+    flex: 0 0 auto; 
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: left;
+    margin-right: 1rem;
+    width: 350px;
+    height: max-content;
+}

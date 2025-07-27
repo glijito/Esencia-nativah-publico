@@ -1,0 +1,30 @@
+@media (min-width: 600px) and (max-width: 1024px) {
+
+    /*************** HERO BANNER **************/
+    #img-banner-temporada{
+        height: 13em;
+        background-size: cover;
+    }
+
+    /************** HEADER TIENDA **************/
+
+    .items-shop header{
+        justify-content: space-between;
+        font-size: 0.7em;
+        margin: 0 2em;
+    }
+
+    /**************  TIENDA **************/
+
+    #container-items{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 0.4em;
+        margin: 1em 2em;
+    }
+
+    .product-card{
+        width: auto;
+    }
+
+}

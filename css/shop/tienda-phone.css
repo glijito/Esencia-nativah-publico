@@ -1,0 +1,43 @@
+@media(max-width: 480px) {
+
+    /*************** HERO BANNER **************/
+    #img-banner-temporada{
+        height: 9em;
+        object-fit: none;
+        background-size: contain;
+    }
+
+    /************** HEADER TIENDA **************/
+
+    .items-shop header{
+        justify-content: space-between;
+        font-size: 0.7em;
+        margin: 0 2em;
+    }
+
+    /**************  TIENDA **************/
+
+    #container-items{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 0.4em;
+        margin: 1em 2em;
+    }
+
+    .product-card{
+        width: auto;
+    }
+
+    .product-card p:nth-child(2){
+        font-size: 1em;
+    }
+
+    .product-card p:nth-child(3){
+        font-size: 0.6em;
+    }
+
+    .product-card p:nth-child(4){
+        font-size: 0.9em;
+    }
+
+}

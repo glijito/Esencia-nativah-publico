@@ -1,0 +1,187 @@
+@media (min-width: 600px) and (max-width: 1024px) {
+  /************** HERO BANNER **************/
+    
+    .contrainer-text-hero-desktop{
+        display: none;
+    }
+
+    .contrainer-text-hero-phone{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin-left: 3rem;
+    }
+
+    .hero article #title-heroe{
+        font-size: 7vw ;
+        width: max-content;
+        letter-spacing: 1px;
+        margin: 0 ;
+    }
+
+    .contrainer-text-hero-phone #subtitle-heroe-phone {
+        font-size: 3vw;
+        width: max-content;
+        letter-spacing: 1px;
+        margin: 0;
+    }
+
+    article .descripcion-desktop {
+        display: none;
+    }
+
+    article .descripcion-phone {
+        position: absolute;
+        display: block;
+        top: 74%;
+        left: 3em;
+        font-size: 17px;
+        line-height: 1.5;
+        width: 300px ;
+        text-align: left;
+        color: #E4DFD5;
+        z-index: 2;
+    }
+
+    section.hero > footer {
+        padding: 30px 3.5em;
+    }
+
+
+  /************** COLECCIONES DESTACADAS **************/
+
+    section.colecciones-destacadas {
+        padding: 40px 3.5em;
+    }
+
+    .colecciones-header {
+        align-items: center;
+        gap: 15px;
+    }
+
+    .colecciones-header #header-coleccion {
+        font-size: 25px;
+    }
+
+    .slider-productos {
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .producto {
+        flex: 0 0 45%;
+        scroll-snap-align: start;
+    }
+
+    .producto figure img {
+        width: 100%;
+        height: auto;
+    }
+
+  /************** JOYAS QUE CUENTAN HISTORIAS **************/
+    .joyas-historias {
+      padding: 200px 20px;
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .joyas-historias h3 {
+      font-size: 4em;
+    }
+
+    .contenedor-texto{
+      height: auto;
+    }
+
+    .contenedor-texto p {
+      width: 600px;
+      height: auto;
+      word-wrap: break-word;
+      font-size: 2em;
+    }
+
+  /************** DISEÑOS QUE RENACEN **************/
+
+  /* === Mosaico superior === */
+
+  .mosaico-superior {
+    height: 150px;
+    background-size: auto 80px; 
+  }
+
+  /* === Hero dividido  === */
+
+  .contenedor-hero {
+    flex-direction: column;
+    height: auto; 
+    padding: 15vh 0;
+    opacity: 1.1;
+  }
+
+  .columna-imagen {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .columna-texto {
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .columna-texto p:nth-child(1) {
+    font-size: 40px;
+  }
+
+  .columna-texto p:nth-child(2),
+  .columna-texto p:nth-child(3) {
+    font-size: 20px;
+  }
+
+  .boton-pedir {
+    background: #dd3676;
+    font-size: 14px;
+    padding: 10px 140px;
+    margin-top: 30px;
+  }
+
+  .boton-pedir:hover {
+    background: #ff5294;
+  }
+
+  /************** DISEÑOS ÚNICOS **************/
+  .disenos-unicos {
+    padding: 40px 3em;
+  }
+
+  #title-disenos {
+    font-size: 28px;
+  }
+
+  .contenedor-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .card {
+    width: 45%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card p {
+    width: 100%;
+    font-size: 16px;
+  }
+}

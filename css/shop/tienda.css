@@ -1,0 +1,99 @@
+/*************** HERO BANNER **************/
+
+#img-banner-temporada{
+    width: 100%;
+    height: 20em;
+    background-image: url("../../assets/img/tienda/chica-joyas.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+}
+
+
+/************** HEADER TIENDA **************/
+.items-shop{
+    display: flex;
+    flex-direction: column;
+}
+
+.base-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.items-shop header{
+    justify-content: space-between;
+    font-size: 1.1em;
+    margin: 0 3em;
+}
+
+.items-shop #title-section{
+    font-size: 1.5em;
+    margin: 0.5em 0;
+    color: #C52462;
+    font-weight: 400;
+}
+
+.items-shop header div:nth-child(2) {
+    opacity: 0.5;
+    padding: 10px 40px;
+    border: 2px solid #3D3D3D;
+    cursor: pointer;
+}
+
+/*************** ITEMS TIENDA **************/
+
+#container-items{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1em;
+    margin: 1em 4.4em;
+}
+
+.product-card{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: left;
+    width: auto;
+}
+
+.product-card img{
+    width: 100%;
+}
+
+.product-card p{
+    margin-top: 0.6em;
+}
+
+.product-card p:nth-child(2){
+    font-size: 1.2em;
+}
+
+.product-card p:nth-child(3){
+    font-size: 0.8em;
+}
+
+.product-card p:nth-child(4){
+    font-size: 1.2em;
+}
+
+.product-card a {
+    font-size: 15px;
+    height: 3em;
+}
+
+.product-card a button{
+    background: #232323;
+    color: #E4DFD5;
+    cursor: pointer;
+    border: none;
+    height: 100%;
+    width: 100%;
+}
+
+
+
