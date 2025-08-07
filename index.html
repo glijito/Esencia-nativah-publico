@@ -67,101 +67,23 @@
                     <button class="siguiente">&#10095;</button>
                 </div>
             </header>
-
             <section class="slider-productos">
-                <article class="producto">
-                    <figure>
-                        <img src="./assets/img/collar_azul.jpg" alt="Producto">
-                    </figure>
-
-                    <div class="info-producto">
-                        <h3>Raíces Ancestrales</h3>
-                        <p class="descripcion-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.</p>
-                        <p class="precio">$500 MXN</p>
-                    </div>
-                    <a href="#" class="boton-explorar">EXPLORAR COLECCIÓN</a>
-                    <a href="#" class="boton-comprar">COMPRAR AHORA</a>
-                </article>
-                <article class="producto">
-                    <figure>
-                        <img src="./assets/img/collar_azul.jpg" alt="Producto">
-                    </figure>
-
-                    <div class="info-producto">
-                        <h3>Raíces Ancestrales</h3>
-                        <p class="descripcion-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.</p>
-                        <p class="precio">$500 MXN</p>
-                    </div>
-                    <a href="#" class="boton-explorar">EXPLORAR COLECCIÓN</a>
-                    <a href="#" class="boton-comprar">COMPRAR AHORA</a>
-                </article>
-                <article class="producto">
-                    <figure>
-                        <img src="./assets/img/collar_azul.jpg" alt="Producto">
-                    </figure>
-
-                    <div class="info-producto">
-                        <h3>Raíces Ancestrales</h3>
-                        <p class="descripcion-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.</p>
-                        <p class="precio">$500 MXN</p>
-                    </div>
-                    <a href="#" class="boton-explorar">EXPLORAR COLECCIÓN</a>
-                    <a href="#" class="boton-comprar">COMPRAR AHORA</a>
-                </article>
-                <article class="producto">
-                    <figure>
-                        <img src="./assets/img/collar_azul.jpg" alt="Producto">
-                    </figure>
-
-                    <div class="info-producto">
-                        <h3>Raíces Ancestrales</h3>
-                        <p class="descripcion-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.</p>
-                        <p class="precio">$500 MXN</p>
-                    </div>
-                    <a href="#" class="boton-explorar">EXPLORAR COLECCIÓN</a>
-                    <a href="#" class="boton-comprar">COMPRAR AHORA</a>
-                </article>
-                <article class="producto">
-                    <figure>
-                        <img src="./assets/img/collar_azul.jpg" alt="Producto">
-                    </figure>
-
-                    <div class="info-producto">
-                        <h3>Raíces Ancestrales</h3>
-                        <p class="descripcion-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.</p>
-                        <p class="precio">$500 MXN</p>
-                    </div>
-                    <a href="#" class="boton-explorar">EXPLORAR COLECCIÓN</a>
-                    <a href="#" class="boton-comprar">COMPRAR AHORA</a>
-                </article>
-                <article class="producto">
-                    <figure>
-                        <img src="./assets/img/collar_azul.jpg" alt="Producto">
-                    </figure>
-
-                    <div class="info-producto">
-                        <h3>Raíces Ancestrales</h3>
-                        <p class="descripcion-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.</p>
-                        <p class="precio">$500 MXN</p>
-                    </div>
-                    <a href="#" class="boton-explorar">EXPLORAR COLECCIÓN</a>
-                    <a href="#" class="boton-comprar">COMPRAR AHORA</a>
-                </article>
-                <article class="producto">
-                    <figure>
-                        <img src="./assets/img/collar_azul.jpg" alt="Producto">
-                    </figure>
-
-                    <div class="info-producto">
-                        <h3>Raíces Ancestrales</h3>
-                        <p class="descripcion-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.</p>
-                        <p class="precio">$500 MXN</p>
-                    </div>
-                    <a href="#" class="boton-explorar">EXPLORAR COLECCIÓN</a>
-                    <a href="#" class="boton-comprar">COMPRAR AHORA</a>
-                </article>
             </section>
         </section>
+        <template id="producto-template">
+            <article class="producto">
+                <figure>
+                    <img src="" alt="Producto">
+                </figure>
+                <div class="info-producto">
+                    <h3 class="nombre"></h3>
+                    <p class="descripcion-item"></p>
+                    <p class="precio"></p>
+                </div>
+                <a href="#" class="boton-explorar">EXPLORAR COLECCIÓN</a>
+                <a href="#" class="boton-comprar">COMPRAR AHORA</a>
+            </article>
+        </template>
 
         <section class="joyas-historias">
             <h3>Joyas que cuentan<br>Historias</h3>
@@ -304,7 +226,7 @@
                 <p>THE NEW</p>
                 <div id="container-itemspreview">
                     <div class="product-principal">
-                        <img src="./assets/img/collar_azul.jpg">
+                        <img src="">
                         <div class="information-principal-product">
                             <p>Lorem ipsum dolor</p>
                             <p>$500 MXN</p>
@@ -312,14 +234,14 @@
                     </div>
                     <div id="container-itemsecondary">
                         <div class="products-secundary">
-                            <img src="./assets/img/collar_azul.jpg">
+                            <img src="">
                             <div class="information-secondary-product">
                                 <p>Lorem ipsum dolor</p>
                                 <p>$500 MXN</p>
                             </div>
                         </div>
                         <div class="products-secundary">
-                            <img src="./assets/img/collar_azul.jpg">
+                            <img src="">
                             <div class="information-secondary-product">
                                 <p>Lorem ipsum dolor</p>
                                 <p>$500 MXN</p>
@@ -331,8 +253,8 @@
         </section>
     </div>
 
-
-    <script src="./js/home.js"></script>
+    <script src="./js/conectors/product-conect.js" type="module"></script>
+    <script src="./js/home.js" type="module"></script>
     <script src="./js/router-util.js"></script>
     </body>
 </html>
