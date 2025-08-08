@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function cargarProductosDestacados(products){
         const container = document.querySelector('.slider-productos');
-        const template = document.getElementById('producto-template');
+        const template = document.querySelector('.product-card');
 
         products.forEach(product => {
 

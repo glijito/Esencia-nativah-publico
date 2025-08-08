@@ -46,71 +46,14 @@
                     <span id="btn-filters">Filtros</span>
                 </div>
             </header>
-            <article id="container-items">
-                <div class="product-card">
-                    <img src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="Producto 1">
-                    <p>Collar de plata</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?</p>
-                    <p>$500 MXN</p>
-                    <a href="./producto.html"><button>COMPRAR</button></a>
-                </div>
-                <div class="product-card">
-                    <img src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="Producto 1">
-                    <p>Collar de plata</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?</p>
-                    <p>$500 MXN</p>
-                    <a href="./producto.html"><button>COMPRAR</button></a>
-                </div>
-                <div class="product-card">
-                    <img src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="Producto 1">
-                    <p>Collar de plata</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?</p>
-                    <p>$500 MXN</p>
-                    <a href="./producto.html"><button>COMPRAR</button></a>
-                </div>
-                <div class="product-card">
-                    <img src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="Producto 1">
-                    <p>Collar de plata</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?</p>
-                    <p>$500 MXN</p>
-                    <a href="./producto.html"><button>COMPRAR</button></a>
-                </div>
-                <div class="product-card">
-                    <img src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="Producto 1">
-                    <p>Collar de plata</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?</p>
-                    <p>$500 MXN</p>
-                    <a href="./producto.html"><button>COMPRAR</button></a>
-                </div>
-                <div class="product-card">
-                    <img src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="Producto 1">
-                    <p>Collar de plata</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?</p>
-                    <p>$500 MXN</p>
-                    <a href="./producto.html"><button>COMPRAR</button></a>
-                </div>
-                <div class="product-card">
-                    <img src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="Producto 1">
-                    <p>Collar de plata</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?</p>
-                    <p>$500 MXN</p>
-                    <a href="./producto.html"><button>COMPRAR</button></a>
-                </div>
-                <div class="product-card">
-                    <img src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="Producto 1">
-                    <p>Collar de plata</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?</p>
-                    <p>$500 MXN</p>
-                    <a href="./producto.html"><button>COMPRAR</button></a>
-                </div>
-                <div class="product-card">
-                    <img src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="Producto 1">
-                    <p>Collar de plata</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?</p>
-                    <p>$500 MXN</p>
-                    <a href="./producto.html"><button>COMPRAR</button></a>
-                </div>
-            </article>
+            <article id="container-items"></article>
+            <template class="product-card">
+                <img src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="Producto 1">
+                <p id="name-product">Collar de plata</p>
+                <p id="descrip-product">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?</p>
+                <p id="price-product">$500 MXN</p>
+                <a href="./producto.html"><button>COMPRAR</button></a>
+            </template>
         </section>
 
         <footer class="footer-nativah">
@@ -314,7 +257,8 @@
         </section>
     </div>
 
+    <script src="../js/conectors/product-conect.js" type="module"></script>
     <script src="../js/router-util.js"></script>
-    <script src="../js/shop.js"></script>
+    <script src="../js/shop.js" type="module"></script>
     </body>
 </html>
