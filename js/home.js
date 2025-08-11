@@ -40,22 +40,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     ///////////// EVENTOS PARA CARRUSEL PRODUCTOS DESTACADOS ////////////////////
-    function cargarProductosHome() {
-
-        fetchProducts().then(products => {
+    async function cargarProductosHome() {
+        try{
+            const products = await fetchProducts()
             cargarProductosDestacados(products)
             cargarCategorias(products.slice(0,3))
-        }).catch(error => {
-            console.error('Error al cargar productos destacados:', error);
-        });
+        }catch(error){
+            console.error("Error al cargar los productos", error)
+        }
     }
 
     function cargarProductosDestacados(products){
         const container = document.querySelector('.slider-productos');
-        const template = document.querySelector('.product-card');
+        const template = document.querySelector('#producto-template');
 
         products.forEach(product => {
-
             const clone = template.content.cloneNode(true);
 
             clone.querySelector('img').src = product.images[0].url || 'assets/placeholder.jpg';

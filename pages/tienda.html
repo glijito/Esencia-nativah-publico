@@ -18,7 +18,7 @@
         <section class="hero">
             <header>
                 <div id="menu-nativa-phone"></div>
-                <a href="../index.html"><div id="logo-nativa"></div></a>
+                <div id="logo-nativa"></div>
                 <nav>
                     <ul>
                         <li><a href="#">TIENDA</a></li>
@@ -46,13 +46,24 @@
                     <span id="btn-filters">Filtros</span>
                 </div>
             </header>
+            <dotlottie-wc 
+                id="player-lottie"
+                src="../assets/img/animation/loading.lottie"
+                background="transparent"
+                speed="1"
+                style="width: 500px; height: 500px; margin: 0 auto;"
+                loop
+                autoplay>
+            </dotlottie-wc>
             <article id="container-items"></article>
-            <template class="product-card">
-                <img src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="Producto 1">
-                <p id="name-product">Collar de plata</p>
-                <p id="descrip-product">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?</p>
-                <p id="price-product">$500 MXN</p>
-                <a href="./producto.html"><button>COMPRAR</button></a>
+            <template id="template-card">
+                <div class="product-card">
+                    <img src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="Producto 1">
+                    <p id="name-product">Collar de plata</p>
+                    <p id="descrip-product">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?</p>
+                    <p id="price-product">$500 MXN</p>
+                    <a class="boton-comprar" href="./producto.html"><button>COMPRAR</button></a>
+                </div>
             </template>
         </section>
 
@@ -257,6 +268,7 @@
         </section>
     </div>
 
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
     <script src="../js/conectors/product-conect.js" type="module"></script>
     <script src="../js/router-util.js"></script>
     <script src="../js/shop.js" type="module"></script>

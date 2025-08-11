@@ -206,12 +206,12 @@
             <div id="button-close-phone"></div>
             <nav>
                 <ul>
-                    <li><a href="./pages/tienda.html?category='all'">Ver todo</a></li>
-                    <li><a href="./pages/tienda.html?category='Anillo'" >Anillos</a></li>
-                    <li><a href="./pages/tienda.html?category='Collares'">Collares</a></li>
-                    <li><a href="./pages/tienda.html?category='Pulsera'">Pulseras</a></li>
-                    <li><a href="./pages/tienda.html?category='Aretes'">Aretes</a></li>
-                    <li><a href="./pages/tienda.html?category='Colecciones'">Colecciones</a></li>
+                    <li><a href="./pages/tienda.html?category=all">Ver todo</a></li>
+                    <li><a href="./pages/tienda.html?category=anillo" >Anillos</a></li>
+                    <li><a href="./pages/tienda.html?category=collares">Collares</a></li>
+                    <li><a href="./pages/tienda.html?category=pulsera">Pulseras</a></li>
+                    <li><a href="./pages/tienda.html?category=aretes">Aretes</a></li>
+                    <li><a href="./pages/tienda.html?category=colecciones">Colecciones</a></li>
                 </ul>
             </nav>
             <div class="container-menuModal-phone">
@@ -251,6 +251,47 @@
                 </div>
             </div>
         </section>
+    </div>
+
+    <div class="car-products">
+        <div id="header">
+            <h1>Carrito</h1>
+        </div>
+        <div id="container-products">
+            <div class="product-on-list">
+                <div id="img-product">
+                    <img id="id-product">
+                </div>
+                <div id="information-product">
+                    <p id="product-price"></p>
+                    <div>
+                        <img id="minus-product">
+                        <p id="count-product"></p>
+                        <img id="plus-product">
+                    </div>
+                </div>
+                <div id="delete-product">
+                    <img>
+                </div>
+            </div>
+        </div>
+        <div id="subtotal-information">
+            <div>
+                <div id="subtotal">
+                    <p>Subtotal</p>
+                    <p>$</p>
+                </div>
+                <div id="total">
+                    <p>Total</p>
+                    <p>$</p>
+                </div>
+            </div>
+            <div id="information-leyend">
+                <p>Todos los productos, en sus precios finales ya incluyen iva, por lo que 
+                    puedes pedir tu factura CFDI</p>
+            </div>
+            <button id="pay-car">IR A PAGAR</button>
+        </div>
     </div>
 
     <script src="./js/conectors/product-conect.js" type="module"></script>

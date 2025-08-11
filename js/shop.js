@@ -1,5 +1,6 @@
 import { fetchProductsbyCategory } from './conectors/product-conect.js';
 
+
 document.addEventListener("DOMContentLoaded", function(){
 
     /////////////////// SECCION FILTROS DE PRODUCTOS ////////////////////////////
@@ -21,6 +22,8 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     })
 
+  
+
 
     /////////////////// SECCION PRODUCTOS ////////////////////////////
     const params = new URLSearchParams(window.location.search);
@@ -29,19 +32,36 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 
 
-function loadCategoria(categoria){
-    fetchProductsbyCategory(encodeURIComponent(categoria))
-    .then(products =>{
+async function loadCategoria(categoria){
+    try{
+        await customElements.whenDefined('dotlottie-wc');
+        const player = document.getElementById('player-lottie');
+
+        const ensureAPI = () =>
+            new Promise(resolve => {
+                if (player.dotLottie) return resolve(player.dotLottie);
+
+                const check = setInterval(() => {
+                if (player.dotLottie) { clearInterval(check); resolve(player.dotLottie); }
+                }, 20);
+            });
+
+        const dot = await ensureAPI();
+
+        const products = await fetchProductsbyCategory(encodeURIComponent(categoria))
         cargarProductosCategoria(products)
-    }).catch(erro=>{
-        console.error("Error al cargar los productos:",erro)
-    })
+
+        dot.destroy();      
+        player.style.display="none"
+    }catch(error){
+        console.log("Error al cargar los productos:",error )
+    }
 }
 
 
 function cargarProductosCategoria(products){
     const container = document.querySelector('#container-items');
-    const template = document.getElementById('.product-card');
+    const template = document.querySelector('#template-card');
 
     products.forEach(product => {
 

@@ -15,7 +15,7 @@ export async function fetchProducts() {
 
 export async function fetchProductsbyCategory(category) {
     try {
-        let URL_PRODUCTS="'https://esencianativah.com/wp/wp-json/esencia_public/v1/products"
+        let URL_PRODUCTS='https://esencianativah.com/wp/wp-json/esencia_public/v1/products'
 
         if(category!="all"){
             URL_PRODUCTS+="?category="+category
