@@ -373,4 +373,148 @@ section.hero > header nav a {
 /************************************************************/
 /************************************************************/
 
+#car-products{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    position: fixed;
+    width: 30%;
+    box-shadow: -14px 2px 44px -14px rgba(0,0,0,0.75);
+    z-index: 2000;
+    height: 100%;
+    top: 0;
+    right: -35em;
+    transition: right 0.3s ease;
+}
 
+#car-products h1{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 20px 20px;
+}
+
+#car-products #container-products{
+    display: flex; 
+    flex-direction: column;
+    height: 65%;
+    margin: 10px 20px;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+#car-products #container-products .product-on-list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.product-on-list .img-product {
+    display: flex;
+    align-items: center;
+}
+
+.product-on-list .img-product img{
+    background-image: url('../assets/img/piezas_unicas_personalizadas_aretes.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 1.5em;
+    width: 100px;
+    height: 100px;
+}
+
+.product-on-list .delete-product img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+
+.product-on-list .information-product{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    height: max-content;
+    margin: 0 1.5em;
+}
+
+
+.product-on-list .information-product .product-name{
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.product-on-list .information-product .product-price{
+    font-size: 0.9em;
+    font-weight: lighter;
+    margin-bottom: 2px;
+}
+
+.product-on-list .information-product .controls-count-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 1em;
+    gap: 10px;
+}
+
+.controls-count-item .minus-product {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.controls-count-item .count-product{
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.controls-count-item .plus-product {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+
+#subtotal-information {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1em;
+  box-shadow: -1px -18px 24px -8px rgba(0,0,0,0.75);
+  width: 100%;
+}
+
+#subtotal-information #subtotal p{
+    font-size: 0.7em;
+    font-weight: lighter;
+    margin-bottom: 1em;
+}
+
+#subtotal-information #total p{
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#subtotal-information #information-leyend p{
+    font-size: 0.8em;
+    font-weight:400;
+}
+
+#subtotal-information #pay-car{
+    border-radius: 2em;
+    background-color: #05ad1b;
+    color: white;
+    cursor: pointer;
+    padding: 1em 3em;
+    margin-left: 20%;
+    border: 1px solid #ccc;
+}
+
+#container-products #product-empty-load{
+    margin-left: 4em;
+    margin-top: 4em;
+}

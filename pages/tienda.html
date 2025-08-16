@@ -62,7 +62,7 @@
                     <p id="name-product">Collar de plata</p>
                     <p id="descrip-product">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?</p>
                     <p id="price-product">$500 MXN</p>
-                    <a class="boton-comprar" href="./producto.html"><button>COMPRAR</button></a>
+                    <a class="boton-comprar"><button>COMPRAR</button></a>
                 </div>
             </template>
         </section>
@@ -133,144 +133,194 @@
         </footer>
 
 
-    <div class="filtro-products isModal">
-        <div id="header-filtro">
-            <p class="title-section">Filtrar y ordenar</p>
-            <p id="reset-default">Borrar todo</p>
+        <div class="filtro-products isModal">
+            <div id="header-filtro">
+                <p class="title-section">Filtrar y ordenar</p>
+                <p id="reset-default">Borrar todo</p>
+            </div>
+            <hr class="isModal">
+            <div id="parametros-filtro" class="isModal">
+                <p class="isModal title-section">Ordenar por</p>
+                <div class="isModal container-filter-price">
+                    <div class="isModal check-container">
+                        <input type="radio" id="precioMenorMayor" name="ordenarPor" value="mayor" checked>
+                        <p>Precio de menor a mayor</p>
+                    </div>
+                    <div class="isModal check-container">
+                        <input type="radio" id="precioMayorMenor" name="ordenarPor" value="mayor" checked>
+                        <p>Precio de mayor a menor</p>
+                    </div>
+                    <div class="isModal check-container">
+                        <input type="radio" id="novedades" name="ordenarPor" value="mayor" checked>
+                        <p>Novedades</p>
+                    </div>
+                </div>
+                <p class="isModal title-section">Tipo de material</p>
+                <div class="isModal container-filter-material">
+                    <div class="isModal check-container">
+                        <input type="radio" id="materialPlata" name="tipoMaterial" value="mayor" checked>
+                        <p>Plata</p>
+                    </div>
+                    <div class="isModal check-container">
+                        <input type="radio" id="materialOro" name="tipoMaterial" value="mayor" checked>
+                        <p>Oro</p>
+                    </div>
+                    <div class="isModal check-container">
+                        <input type="radio" id="materialRecubrimiento" name="tipoMaterial" value="mayor" checked>
+                        <p>Recubrimiento en Oro</p>
+                    </div>
+                </div>
+                <p class="isModal title-section">Categoria</p>
+                <div class="isModal container-filter-categoria">
+                    <div class="isModal check-container">
+                        <input type="radio" id="categoriaTodo" name="tipoCategoria" value="mayor" checked>
+                        <p>Ver todo</p>
+                    </div>
+                    <div class="isModal check-container">
+                        <input type="radio" id="categoriaAnillos" name="tipoCategoria" value="mayor" checked>
+                        <p>Anillos</p>
+                    </div>
+                    <div class="isModal check-container">
+                        <input type="radio" id="categoriaCollares" name="tipoCategoria" value="mayor" checked>
+                        <p>Collares</p>
+                    </div>
+                    <div class="isModal check-container">
+                        <input type="radio" id="categoriaPulceras" name="tipoCategoria" value="mayor" checked>
+                        <p>Pulceras</p>
+                    </div>
+                    <div class="isModal check-container">
+                        <input type="radio" id="categoriaAretes" name="tipoCategoria" value="mayor" checked>
+                        <p>Aretes</p>
+                    </div>
+                    <div class="isModal check-container">
+                        <input type="radio" id="categoriaTheNew" name="tipoCategoria" value="mayor" checked>
+                        <p>The New</p>
+                    </div>
+                </div>
+                <p class="isModal title-section">Colecciones</p>
+                <div class="isModal container-filter-coleccion">
+                    <div class="isModal check-container">
+                        <input type="radio" id="precioMenorMayor" name="buscarCollecion" value="mayor" checked>
+                        <p>Precio de menor a mayor</p>
+                    </div>
+                    <div class="isModal check-container">
+                        <input type="radio" id="precioMayorMenor" name="buscarCollecion" value="mayor" checked>
+                        <p>Precio de mayor a menor</p>
+                    </div>
+                    <div class="isModal check-container">
+                        <input type="radio" id="novedades" name="buscarCollecion" value="mayor" checked>
+                        <p>Novedades</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <hr class="isModal">
-        <div id="parametros-filtro" class="isModal">
-            <p class="isModal title-section">Ordenar por</p>
-            <div class="isModal container-filter-price">
-                <div class="isModal check-container">
-                    <input type="radio" id="precioMenorMayor" name="ordenarPor" value="mayor" checked>
-                    <p>Precio de menor a mayor</p>
-                </div>
-                <div class="isModal check-container">
-                    <input type="radio" id="precioMayorMenor" name="ordenarPor" value="mayor" checked>
-                    <p>Precio de mayor a menor</p>
-                </div>
-                <div class="isModal check-container">
-                    <input type="radio" id="novedades" name="ordenarPor" value="mayor" checked>
-                    <p>Novedades</p>
-                </div>
-            </div>
-            <p class="isModal title-section">Tipo de material</p>
-            <div class="isModal container-filter-material">
-                <div class="isModal check-container">
-                    <input type="radio" id="materialPlata" name="tipoMaterial" value="mayor" checked>
-                    <p>Plata</p>
-                </div>
-                <div class="isModal check-container">
-                    <input type="radio" id="materialOro" name="tipoMaterial" value="mayor" checked>
-                    <p>Oro</p>
-                </div>
-                <div class="isModal check-container">
-                    <input type="radio" id="materialRecubrimiento" name="tipoMaterial" value="mayor" checked>
-                    <p>Recubrimiento en Oro</p>
-                </div>
-            </div>
-            <p class="isModal title-section">Categoria</p>
-            <div class="isModal container-filter-categoria">
-                <div class="isModal check-container">
-                    <input type="radio" id="categoriaTodo" name="tipoCategoria" value="mayor" checked>
-                    <p>Ver todo</p>
-                </div>
-                <div class="isModal check-container">
-                    <input type="radio" id="categoriaAnillos" name="tipoCategoria" value="mayor" checked>
-                    <p>Anillos</p>
-                </div>
-                <div class="isModal check-container">
-                    <input type="radio" id="categoriaCollares" name="tipoCategoria" value="mayor" checked>
-                    <p>Collares</p>
-                </div>
-                <div class="isModal check-container">
-                    <input type="radio" id="categoriaPulceras" name="tipoCategoria" value="mayor" checked>
-                    <p>Pulceras</p>
-                </div>
-                <div class="isModal check-container">
-                    <input type="radio" id="categoriaAretes" name="tipoCategoria" value="mayor" checked>
-                    <p>Aretes</p>
-                </div>
-                <div class="isModal check-container">
-                    <input type="radio" id="categoriaTheNew" name="tipoCategoria" value="mayor" checked>
-                    <p>The New</p>
-                </div>
-            </div>
-            <p class="isModal title-section">Colecciones</p>
-            <div class="isModal container-filter-coleccion">
-                <div class="isModal check-container">
-                    <input type="radio" id="precioMenorMayor" name="buscarCollecion" value="mayor" checked>
-                    <p>Precio de menor a mayor</p>
-                </div>
-                <div class="isModal check-container">
-                    <input type="radio" id="precioMayorMenor" name="buscarCollecion" value="mayor" checked>
-                    <p>Precio de mayor a menor</p>
-                </div>
-                <div class="isModal check-container">
-                    <input type="radio" id="novedades" name="buscarCollecion" value="mayor" checked>
-                    <p>Novedades</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
-    <div class="modal">
-        <section class="container-preview">
-            <div id="button-close-phone"></div>
-            <nav>
-                <ul>
-                    <li><a href="./tienda.html">Ver todo</a></li>
-                    <li>Anillos</li>
-                    <li>Collares</li>
-                    <li>Pulseras</li>
-                    <li>Aretes</li>
-                    <li>Colecciones</li>
-                </ul>
-            </nav>
-            <div class="container-menuModal-phone">
+        <div class="modal">
+            <section class="container-preview">
+                <div id="button-close-phone"></div>
                 <nav>
                     <ul>
-                        <li>Preguntas frecuentes</li>
-                        <li>Talk to us</li>
+                        <li><a href="./tienda.html">Ver todo</a></li>
+                        <li><a href="./tienda.html?category=Anillos">Anillos</a></li>
+                        <li><a href="./tienda.html?category=Collares">Collares</a></li>
+                        <li><a href="./tienda.html?category=Pulseras">Pulseras</a></li>
+                        <li><a href="./tienda.html?category=Aretes">Aretes</a></li>
+                        <li><a href="./tienda.html?category=Colecciones">Colecciones</a></li>
                     </ul>
                 </nav>
-            </div>
-            <div class="container-relevants">
-                <p>THE NEW</p>
-                <div id="container-itemspreview">
-                    <div class="product-principal">
-                        <img src="../assets/img/collar_azul.jpg">
-                        <div class="information-principal-product">
-                            <p>Lorem ipsum dolor</p>
-                            <p>$500 MXN</p>
-                        </div>
-                    </div>
-                    <div id="container-itemsecondary">
-                        <div class="products-secundary">
+                <div class="container-menuModal-phone">
+                    <nav>
+                        <ul>
+                            <li>Preguntas frecuentes</li>
+                            <li>Talk to us</li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="container-relevants">
+                    <p>THE NEW</p>
+                    <div id="container-itemspreview">
+                        <div class="product-principal">
                             <img src="../assets/img/collar_azul.jpg">
-                            <div class="information-secondary-product">
+                            <div class="information-principal-product">
                                 <p>Lorem ipsum dolor</p>
                                 <p>$500 MXN</p>
                             </div>
                         </div>
-                        <div class="products-secundary">
-                            <img src="../assets/img/collar_azul.jpg">
-                            <div class="information-secondary-product">
-                                <p>Lorem ipsum dolor</p>
-                                <p>$500 MXN</p>
+                        <div id="container-itemsecondary">
+                            <div class="products-secundary">
+                                <img src="../assets/img/collar_azul.jpg">
+                                <div class="information-secondary-product">
+                                    <p>Lorem ipsum dolor</p>
+                                    <p>$500 MXN</p>
+                                </div>
+                            </div>
+                            <div class="products-secundary">
+                                <img src="../assets/img/collar_azul.jpg">
+                                <div class="information-secondary-product">
+                                    <p>Lorem ipsum dolor</p>
+                                    <p>$500 MXN</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </div>
+            </section>
+        </div>
 
-    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
-    <script src="../js/conectors/product-conect.js" type="module"></script>
-    <script src="../js/router-util.js"></script>
-    <script src="../js/shop.js" type="module"></script>
+        <div id="car-products">
+            <div id="header">
+                <h1>Carrito</h1>
+            </div>
+            <div id="container-products">
+                <div id="product-empty-load">
+                    <img src="../assets/img/animation/EmptyBox.gif" style="width: 200px; height: 200px;">
+                    <h3>Tu carrito está vacío</h3>
+                </div>
+            </div>
+            <template class="producto-template">
+                <div class="product-on-list">
+                    <div class="img-product">
+                        <img >
+                    </div>
+                    <div class="information-product">
+                        <p class="product-name">Nombre del producto</p>
+                        <p class="product-price">Precio: $500</p>
+                        <div class="controls-count-item">
+                            <img class="minus-product" src="../assets/img/car-images/menos.png">
+                            <p class="count-product">0</p>
+                            <img class="plus-product" src="../assets/img/car-images/agregar.png">
+                        </div>
+                    </div>
+                    <div class="delete-product">
+                        <img src="../assets/img/car-images/trash.png">
+                    </div>
+                </div>
+            </template>
+            <div id="subtotal-information">
+                <div>
+                    <div id="subtotal">
+                        <p>Subtotal</p>
+                        <p>$</p>
+                    </div>
+                    <div id="total">
+                        <p>Total</p>
+                        <p>$</p>
+                    </div>
+                </div>
+                <div id="information-leyend">
+                    <p>Todos los productos, en sus precios finales ya incluyen iva,<br> por lo que 
+                        puedes pedir tu factura CFDI</p>
+                </div>
+                <button id="pay-car">IR A PAGAR</button>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+        <script src="../js/conectors/product-conect.js" type="module"></script>
+        <script src="../js/loaders/loadingAnimation.js" type="module"></script>
+        <script src="../js/carrito.js" type="module"></script>
+        <script src="../js/router-util.js" type="module"></script>
+        <script src="../js/shop.js" type="module"></script>
     </body>
 </html>

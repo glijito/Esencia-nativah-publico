@@ -31,6 +31,17 @@
     cursor: pointer;
 }
 
+.modal .container-preview nav ul li a{
+    color: var(--color-primario);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    padding: 10px 15px;
+}
+
+.modal .container-preview nav ul li a:hover{
+    color:#C52462;
+}
+
 .modal .container-preview .container-relevants{
     display: flex;
     flex-direction: column;

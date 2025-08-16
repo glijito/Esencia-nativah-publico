@@ -1,6 +1,11 @@
+import {loadItemsOnCarrito} from "./carrito.js";
+
 let isSelectItem = false;
 
 document.addEventListener("DOMContentLoaded", function(){
+
+    /////////////// CARRITO DE COMPRAS ////////////////////////////
+    loadItemsOnCarrito();
 
     ////////////////VARIABLES GLOBALES///////////////////////////////
     let isModalActivate= false
@@ -84,9 +89,26 @@ document.addEventListener("DOMContentLoaded", function(){
             arrow.style.transform = list.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
         });
     });
-})
 
+ //////////////////////////  CLICK OPTION CART  //////////////////////////
+    let carrito = document.querySelector('#car-products')
+    let isCartOpen = false;
 
+    document.querySelector('#bag-icon-header').addEventListener('click', () => {
+        carrito.style.right = '-5em';
+        isCartOpen=true
+    });
+
+    document.addEventListener("click", function(event){
+        if(!carrito.contains(event.target) 
+                && isCartOpen 
+                && !document.querySelector('#bag-icon-header').contains(event.target)) {
+            carrito.style.right = '-35em';
+            isCartOpen = false;
+        }
+    })
+
+});
 
 function loadHeaderWhite(){
     document.documentElement.style.setProperty('--color-primario', 'black');

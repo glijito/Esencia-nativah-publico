@@ -73,17 +73,19 @@
                     </div>
                     <div class="container-item-desktop">
                         <div class="container-buttons">
-                            <button>AGREGAR AL CARRITO</button>
+                            <button id="add-to-cart">AGREGAR AL CARRITO</button>
                             <p>COMPRAR AHORA</p>
                         </div>
                         <div class="container-descripcion-product">
                             <div class="item-list-information">
                                 <p class="title-item">Descripción</p>
                                 <img src="../assets/img/despliegue_abajo_negro.svg">
+                                <div id="description-product"></div>
                             </div>
                             <div class="item-list-information">
                                 <p class="title-item">Características</p>
                                 <img src="../assets/img/despliegue_abajo_negro.svg">
+                                <div id="detail-product"></div>
                             </div>
                         </div>
                     </div>
@@ -92,7 +94,7 @@
                     <p class="price-product">$500 MXN</p>
                     <p class="information-relevant">Envio gratis a parti de $5000 pesos</p>
                     <div class="container-buttons">
-                            <button>AGREGAR AL CARRITO</button>
+                            <button id="add-to-cart">AGREGAR AL CARRITO</button>
                             <button>COMPRAR AHORA</button>
                     </div>
                     <div class="id-talla-pieza-phone">
@@ -248,12 +250,12 @@
                 <div id="button-close-phone"></div>
                 <nav>
                     <ul>
-                        <li><a href="./tienda.html">Ver todo</a></li>
-                        <li>Anillos</li>
-                        <li>Collares</li>
-                        <li>Pulseras</li>
-                        <li>Aretes</li>
-                        <li>Colecciones</li>
+                        <li><a href="./tienda.html?category=all">Ver todo</a></li>
+                        <li><a href="./tienda.html?category=Anillos">Anillos</a></li>
+                        <li><a href="./tienda.html?category=Collares">Collares</a></li>
+                        <li><a href="./tienda.html?category=Pulseras">Pulseras</a></li>
+                        <li><a href="./tienda.html?category=Aretes">Aretes</a></li>
+                        <li><a href="./tienda.html?category=Colecciones">Colecciones</a></li>
                     </ul>
                 </nav>
                 <div class="container-menuModal-phone">
@@ -294,6 +296,59 @@
                 </div>
             </section>
         </div>
-        <script src="../js/router-util.js"></script>
+
+        <div id="car-products">
+            <div id="header">
+                <h1>Carrito</h1>
+            </div>
+            <div id="container-products">
+                <div id="product-empty-load">
+                    <img src="../assets/img/animation/EmptyBox.gif" style="width: 200px; height: 200px;">
+                    <h3>Tu carrito está vacío</h3>
+                </div>
+            </div>
+            <template class="producto-template">
+                <div class="product-on-list">
+                    <div class="img-product">
+                        <img >
+                    </div>
+                    <div class="information-product">
+                        <p class="product-name">Nombre del producto</p>
+                        <p class="product-price">Precio: $500</p>
+                        <div class="controls-count-item">
+                            <img class="minus-product" src="../assets/img/car-images/menos.png">
+                            <p class="count-product">0</p>
+                            <img class="plus-product" src="../assets/img/car-images/agregar.png">
+                        </div>
+                    </div>
+                    <div class="delete-product">
+                        <img src="../assets/img/car-images/trash.png">
+                    </div>
+                </div>
+            </template>
+            <div id="subtotal-information">
+                <div>
+                    <div id="subtotal">
+                        <p>Subtotal</p>
+                        <p>$</p>
+                    </div>
+                    <div id="total">
+                        <p>Total</p>
+                        <p>$</p>
+                    </div>
+                </div>
+                <div id="information-leyend">
+                    <p>Todos los productos, en sus precios finales ya incluyen iva,<br> por lo que 
+                        puedes pedir tu factura CFDI</p>
+                </div>
+                <button id="pay-car">IR A PAGAR</button>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="../js/carrito.js" type="module"></script>
+        <script src="../js/router-util.js" type="module"></script>
+        <script src="../js/product.js" type="module"></script>
     </body>
 </html>

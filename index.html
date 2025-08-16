@@ -207,11 +207,11 @@
             <nav>
                 <ul>
                     <li><a href="./pages/tienda.html?category=all">Ver todo</a></li>
-                    <li><a href="./pages/tienda.html?category=anillo" >Anillos</a></li>
-                    <li><a href="./pages/tienda.html?category=collares">Collares</a></li>
-                    <li><a href="./pages/tienda.html?category=pulsera">Pulseras</a></li>
-                    <li><a href="./pages/tienda.html?category=aretes">Aretes</a></li>
-                    <li><a href="./pages/tienda.html?category=colecciones">Colecciones</a></li>
+                    <li><a href="./pages/tienda.html?category=Anillos" >Anillos</a></li>
+                    <li><a href="./pages/tienda.html?category=Collares">Collares</a></li>
+                    <li><a href="./pages/tienda.html?category=Pulseras">Pulseras</a></li>
+                    <li><a href="./pages/tienda.html?category=Aretes">Aretes</a></li>
+                    <li><a href="./pages/tienda.html?category=Colecciones">Colecciones</a></li>
                 </ul>
             </nav>
             <div class="container-menuModal-phone">
@@ -253,49 +253,59 @@
         </section>
     </div>
 
-    <div class="car-products">
-        <div id="header">
-            <h1>Carrito</h1>
-        </div>
-        <div id="container-products">
-            <div class="product-on-list">
-                <div id="img-product">
-                    <img id="id-product">
+        <div id="car-products">
+            <div id="header">
+                <h1>Carrito</h1>
+            </div>
+            <div id="container-products">
+                <div id="product-empty-load">
+                    <img src="./assets/img/animation/EmptyBox.gif" style="width: 200px; height: 200px;">
+                    <h3>Tu carrito está vacío</h3>
                 </div>
-                <div id="information-product">
-                    <p id="product-price"></p>
-                    <div>
-                        <img id="minus-product">
-                        <p id="count-product"></p>
-                        <img id="plus-product">
+            </div>
+            <template class="producto-template">
+                <div class="product-on-list">
+                    <div class="img-product">
+                        <img >
+                    </div>
+                    <div class="information-product">
+                        <p class="product-name">Nombre del producto</p>
+                        <p class="product-price">Precio: $500</p>
+                        <div class="controls-count-item">
+                            <img class="minus-product" src="./assets/img/car-images/menos.png">
+                            <p class="count-product">0</p>
+                            <img class="plus-product" src="./assets/img/car-images/agregar.png">
+                        </div>
+                    </div>
+                    <div class="delete-product">
+                        <img src="./assets/img/car-images/trash.png">
                     </div>
                 </div>
-                <div id="delete-product">
-                    <img>
+            </template>
+            <div id="subtotal-information">
+                <div>
+                    <div id="subtotal">
+                        <p>Subtotal</p>
+                        <p>$</p>
+                    </div>
+                    <div id="total">
+                        <p>Total</p>
+                        <p>$</p>
+                    </div>
                 </div>
+                <div id="information-leyend">
+                    <p>Todos los productos, en sus precios finales ya incluyen iva,<br> por lo que 
+                        puedes pedir tu factura CFDI</p>
+                </div>
+                <button id="pay-car">IR A PAGAR</button>
             </div>
         </div>
-        <div id="subtotal-information">
-            <div>
-                <div id="subtotal">
-                    <p>Subtotal</p>
-                    <p>$</p>
-                </div>
-                <div id="total">
-                    <p>Total</p>
-                    <p>$</p>
-                </div>
-            </div>
-            <div id="information-leyend">
-                <p>Todos los productos, en sus precios finales ya incluyen iva, por lo que 
-                    puedes pedir tu factura CFDI</p>
-            </div>
-            <button id="pay-car">IR A PAGAR</button>
-        </div>
-    </div>
 
+
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
     <script src="./js/conectors/product-conect.js" type="module"></script>
-    <script src="./js/router-util.js"></script>
+    <script src="./js/carrito.js" type="module"></script>
+    <script src="./js/router-util.js" type="module"></script>
     <script src="./js/home.js" type="module"></script>
     </body>
 </html>
