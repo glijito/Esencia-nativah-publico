@@ -1,4 +1,4 @@
-import {loadItemsOnCarrito} from "./carrito.js";
+import {loadItemsOnCarrito,buyShopCarItems} from "./carrito.js";
 
 let isSelectItem = false;
 
@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
     ////////////// HEADER DINAMICO X PAGES /////////////////////////////
     let isPagePrincipal = true;    
-
 
     if(window.location.pathname === "/pages/tienda.html" || window.location.pathname === "/pages/producto.html") {
         isPagePrincipal = false;
@@ -90,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function(){
         });
     });
 
- //////////////////////////  CLICK OPTION CART  //////////////////////////
+ //////////////////////////  CLICK VIEW ICON- CART  //////////////////////////
     let carrito = document.querySelector('#car-products')
     let isCartOpen = false;
 
@@ -103,11 +102,22 @@ document.addEventListener("DOMContentLoaded", function(){
         if(!carrito.contains(event.target) 
                 && isCartOpen 
                 && !document.querySelector('#bag-icon-header').contains(event.target)) {
-            carrito.style.right = '-35em';
+            carrito.style.right = '-55em';
             isCartOpen = false;
         }
     })
 
+    ////////////////  COMPRA DE PRODUCTOS ON SHOP  //////////////////////////
+    document.querySelector("#pay-car").addEventListener("click", function() {
+        if(!buyShopCarItems()){
+            Swal.fire({
+                title: "No se pudo realizar la compra",
+                text: "Favor de intentar más tarde.",
+                icon: "error"
+            });
+        }
+        this.closest('#car-products').style.right = '-55em';
+    })
 });
 
 function loadHeaderWhite(){
@@ -122,7 +132,6 @@ function loadHeaderWhite(){
 
 
 function loadHeaderBlack(){
-
     document.documentElement.style.setProperty('--color-primario', 'white');
     document.documentElement.style.setProperty('--bg-header', '#1a1a1a00');
     document.documentElement.style.setProperty('--img-flecha', 'url(../assets/img/despliegue_abajo_blanco.svg)');
@@ -130,7 +139,6 @@ function loadHeaderBlack(){
     document.documentElement.style.setProperty('--img-search', 'url(../assets/img/buscar_blanco.svg)');
     document.documentElement.style.setProperty('--img-nativa', 'url(../assets/img/logoNativah_blanco.svg)');
     document.documentElement.style.setProperty('--img-menu-phone', 'url(../assets/img/icono_hamburguesa_blanco.svg)');
-
 }
 
 function itemActivateMenu(itemSection){

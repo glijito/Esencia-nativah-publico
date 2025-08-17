@@ -110,10 +110,18 @@
 
 .item-list-information{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     border-bottom: 1px solid #707070;
+}
+.item-list-information .row-title-information{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 0.5rem;
+    cursor: pointer;
 }
 
 .item-list-information p{

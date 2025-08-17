@@ -11,12 +11,12 @@ document.addEventListener("DOMContentLoaded", function(){
     const product = products.find(item => item.id === Number(idProduct));
 
     if (product) {
-        document.getElementById("title-section").textContent = product.name;
-        document.getElementById("title-item").textContent = product.name;
-        document.getElementsByClassName("subtitle-item")[0].textContent = `REF: ${product.name}`;
-        document.getElementById("description-product").textContent = product.name;
-        document.getElementById("price-item").textContent = `$${product.price} MXN`;
-        document.getElementById("detail-product").textContent = product.name;
+        document.getElementById("title-section").textContent = `Tienda > ${product.categories[0]}`
+        document.getElementById("title-item").textContent =  `${product.categories[0]} - ${product.meta["coleccion"]}`;
+        document.getElementsByClassName("subtitle-item")[1].textContent = `REF: ${product.name}`;
+        document.getElementById("description-product").textContent = product.meta["descripcion"];
+        document.getElementById("price-item").textContent = `$${product.meta["precio"]} MXN`;
+        document.getElementById("detail-product").textContent = product.meta["medida"];
 
         let imagesGalery =  document.getElementsByClassName("producto-secundary");
         let principalImage =  document.getElementsByClassName("producto-principal");

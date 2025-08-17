@@ -1,5 +1,4 @@
 import { fetchProductsbyCategory } from './conectors/product-conect.js';
-import { getAnimationApi } from './loaders/loadingAnimation.js';
 
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -71,9 +70,10 @@ function cargarProductosCategoria(products){
         const clone = template.content.cloneNode(true);
 
         clone.querySelector('img').src = product.images[0].url || 'assets/placeholder.jpg';
-        clone.getElementById('name-product').textContent = product.name;
-        clone.getElementById('descrip-product').textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?";
-        clone.getElementById('price-product').textContent = `$${product.price} MXN`;
+        clone.getElementById('name-product').textContent = `${product.categories[0]} - ${product.meta["coleccion"]}`;
+        clone.getElementById('descrip-product').textContent = product.meta["descripcion"];
+        clone.getElementById('price-product').textContent = `$${product.meta["precio"]} MXN`;
+        clone.getElementById('price-product').style.fontWeight = 'bold';
         
         clone.querySelector('.boton-comprar').href = `/pages/producto.html?id=${product.id}`;
         container.appendChild(clone);

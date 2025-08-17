@@ -58,12 +58,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const clone = template.content.cloneNode(true);
 
             clone.querySelector('img').src = product.images[0].url || 'assets/placeholder.jpg';
-            clone.querySelector('img').alt = product.name;
-            clone.querySelector('.nombre').textContent = product.name;
-            clone.querySelector('.descripcion-item').textContent = "Pieza exclusiva hecha a mano."; // o usa una propiedad si tienes descripción
-            clone.querySelector('.precio').textContent = `$${product.price} MXN`;
+            clone.querySelector('img').alt = product.meta["coleccion"];
+            clone.querySelector('.nombre').textContent =`${product.categories[0]} - ${product.meta["coleccion"]}`;
+            clone.querySelector('.descripcion-item').textContent = "Pieza exclusiva hecha a mano."; 
 
-            clone.querySelector('.boton-comprar').href = `/pages/producto.html?id=${product.id}`;
+            clone.querySelector('.boton-explorar').href = `/pages/tienda.html?category=${product.categories[0]}`;
             container.appendChild(clone);
         })
     }
