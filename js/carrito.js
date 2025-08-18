@@ -1,7 +1,9 @@
 import { loadBuyCarrito } from "./conectors/product-conect.js";
+
 const API_BASE = window.location.hostname.includes('localhost') 
     ? 'http://localhost:3000' 
     : 'https://esencianativah.com/wp/wp-json/esencia_public/v1';
+
 
 export function loadItemsOnCarrito(){
 
@@ -117,16 +119,19 @@ export async function buyShopCarItems() {
     })
 
     const response = await loadBuyCarrito(pasarelaCarrito)
+    console.log('Respuesta de la compra:', response);
     if(!response || !response.ok || (response.count ?? 0) < 1 ) {
         console.error('Error al realizar la compra:', response);
         return false;
-    }
-  */
-    const items = [{ product_id: 302, qty: 2 }]; // lo que tengas en tu carrito local
-    const payload = btoa(JSON.stringify(items));
-    const bridge = `https://esencianativah.com/wp/?esync=${encodeURIComponent(payload)}`;
-    window.location.href = bridge;  // el servidor agrega y te manda a /checkout
-
+    }*/
+    const items = [
+        { product_id: 302, qty: 2 },
+        { product_id: 311, qty: 1 }
+    ]
+    const json = JSON.stringify(items);
+    const b64  = btoa(unescape(encodeURIComponent(json))); // base64 seguro
+    const url  = `https://esencianativah.com/wp/?esync=${b64}`;
     //window.location.href ='https://esencianativah.com/wp/checkout/';
+    window.location.href = url;
     return true;
 }
