@@ -4,6 +4,7 @@ const API_BASE = window.location.hostname.includes('localhost')
     ? 'http://localhost:3000' 
     : 'https://esencianativah.com/wp/wp-json/esencia_public/v1';
 
+const ENVIO_COST = 200; // Costo de envío fijo  
 
 export function loadItemsOnCarrito(){
 
@@ -28,22 +29,27 @@ export function loadItemsOnCarrito(){
     carrito.forEach(item => {
         const clone = template.content.cloneNode(true);
         clone.querySelector('.img-product img').src = item.image || 'assets/placeholder.jpg';
-        clone.querySelector('.product-name').textContent = item.product_name;
-        clone.querySelector('.product-price').textContent = `Precio: $${item.price} MXN`;
-        clone.querySelector('.count-product').textContent = item.quantity;
+        clone.querySelector('.product-name').textContent =  item.product_name;
+        clone.querySelector('.product-price').textContent = `$${item.price} MXN`;
 
         clone.querySelector('.delete-product img').addEventListener('click', function() {
-            removeItemCarrito(item.product_name);
+            removeItemCarrito(item.id_product);
             this.closest('.product-on-list').remove();
         });
 
-        clone.querySelector(".plus-product").addEventListener('click', function() {
-            addItemOnCarrito(this, item.product_name);
-        });
+        for(let i = 0; i < item.stock; i++) {
+            const countItem = document.createElement('option');
+            countItem.className = 'count-product';
+            countItem.textContent = i+1;
+            clone.querySelector('.select-quanty-items').appendChild(countItem);
+        }
 
-        clone.querySelector(".minus-product").addEventListener('click', function() {
-            lessItemOnCarrito(this, item.product_name);
-        });
+        clone.querySelector('.select-quanty-items').addEventListener('change', function() {
+            const selectedQuantity = parseInt(this.value, 10);
+            item.quantity = selectedQuantity;
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            calcularTotalCarrito();
+        })
 
          containerCart.appendChild(clone);
     });
@@ -59,44 +65,14 @@ function calcularTotalCarrito() {
         subtotal += item.price * item.quantity;
     });
 
-    document.getElementById("subtotal").textContent = `Subtotal: $${subtotal.toFixed(2)} MXN`;
-    document.getElementById("total").textContent = `Total: $${subtotal.toFixed(2)} MXN`;
+    subtotal+= ENVIO_COST
+    document.getElementById("price-subtotal").textContent = `$${subtotal.toFixed(2)} MXN`;
+    document.getElementById("total-price").textContent = `$${subtotal.toFixed(2)} MXN`;
 }
 
-function addItemOnCarrito(button, element) {
+function removeItemCarrito(id_product){
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    let count_product = button.closest('.product-on-list').querySelector(".count-product");
-    let item = carrito.find(item => item.product_name === element);
-
-    if(item){
-        item.quantity = item.quantity + 1;
-        count_product.textContent = item.quantity;   
-        localStorage.setItem("carrito", JSON.stringify(carrito));
-        calcularTotalCarrito();
-    }
-}
-
-function lessItemOnCarrito(button, element) {
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    let count_product = button.closest('.product-on-list').querySelector(".count-product");
-    let item = carrito.find(item => item.product_name === element);
-
-    if(item){
-        if(item.quantity > 1) {
-            item.quantity = item.quantity -1;
-            count_product.textContent = item.quantity;
-            localStorage.setItem("carrito", JSON.stringify(carrito));
-            calcularTotalCarrito();
-        }else{
-            removeItemCarrito(element)
-            button.closest('.product-on-list').remove();
-        }
-    }
-}
-
-function removeItemCarrito(product_name){
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    carrito = carrito.filter(item => item.product_name !== product_name);
+    carrito = carrito.filter(item => item.id_product !== id_product);
     localStorage.setItem('carrito', JSON.stringify(carrito));
     calcularTotalCarrito()
     loadItemsOnCarrito()

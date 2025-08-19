@@ -168,17 +168,3 @@ hr{
     height: 2rem;
     gap: 1rem;
 }
-
-/*************** MODAL FORM **************/
-
-
-.modal-form{
-    position: fixed;
-    top: -30rem;
-    left: 0;
-    width: 100%;
-    padding: 40px 5rem;
-    z-index: 10;
-    background-color: white;
-    transition: top 0.5s ease-in-out;
-}

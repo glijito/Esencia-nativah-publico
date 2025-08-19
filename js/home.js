@@ -39,12 +39,11 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(actualizarFlechas, 100); // Espera a que el scroll termine para actualizar las flechas
     });
 
-    ///////////// EVENTOS PARA CARRUSEL PRODUCTOS DESTACADOS ////////////////////
+    ///////////// CARGA ITEMS PARA CARRUSEL PRODUCTOS DESTACADOS ////////////////////
     async function cargarProductosHome() {
         try{
             const products = await fetchProducts()
             cargarProductosDestacados(products)
-            cargarCategorias(products.slice(0,3))
         }catch(error){
             console.error("Error al cargar los productos", error)
         }
@@ -65,32 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
             clone.querySelector('.boton-explorar').href = `/pages/tienda.html?category=${product.categories[0]}`;
             container.appendChild(clone);
         })
-    }
-
-
-    function cargarCategorias(relevantsProduct){
-        const template = document.getElementById('container-itemspreview');
-        console.log(relevantsProduct)
-        renderProductCard(template, "product-principal", relevantsProduct[0]);
-        renderProductCard(template, "products-secundary", relevantsProduct[1],0);
-        renderProductCard(template, "products-secundary", relevantsProduct[2],1);
-    }
-
-
-    function renderProductCard(template,containerSelector, product, index=0) {
-
-        const container = template.getElementsByClassName(containerSelector)[index];
-        
-        const img = container.querySelector("img");
-        const info = container.querySelectorAll("p");
-
-        if (product) {
-            img.src = product.images[0].url;
-            if (info[0]) info[0].innerHTML = product.name;
-            if (info[1]) info[1].innerHTML = `$${product.price} MXN`;
-        } else {
-            img.src = 'assets/placeholder.jpg'; 
-        }
     }
 
     function main(){

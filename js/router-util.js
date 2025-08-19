@@ -1,8 +1,9 @@
 import {loadItemsOnCarrito,buyShopCarItems} from "./carrito.js";
+import { fetchProducts } from './conectors/product-conect.js';
 
 let isSelectItem = false;
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", async function(){
 
     /////////////// CARRITO DE COMPRAS ////////////////////////////
     loadItemsOnCarrito();
@@ -29,29 +30,20 @@ document.addEventListener("DOMContentLoaded", function(){
     ////////////////  CARGA DE MODAL PHONE //////////////////////////
     const bntMenuPhone = document.querySelector("#menu-nativa-phone");
     const btnCloseModalPhone = document.querySelector("#button-close-phone");
-    const listSectionPhone=modal.querySelectorAll("li")
 
     function abrirMenuPhone() {
         if (!isModalActivate) {
+            loadHeaderWhite()
             modal.style.left = '0';
             isModalActivate = true;
-            listSectionPhone.forEach((itemSection) => { 
-                itemSection._handler = itemSection._handler || (() => itemActivateMenu(itemSection));
-                itemSection.addEventListener("click", itemSection._handler);
-                itemSection.addEventListener("touchstart", itemSection._handler);
-            });
         }
     }
 
     bntMenuPhone.addEventListener("click", abrirMenuPhone);
-    bntMenuPhone.addEventListener("touchstart", abrirMenuPhone);
 
     btnCloseModalPhone.addEventListener("click", () => {
         modal.style.left = '-150rem';
         isModalActivate = false;
-        listSectionPhone.forEach((itemSection) => {
-            itemSection.removeEventListener("click", itemSection._handler)
-        })
     })
 
     //////////////////////////  CARGA DE MODAL  ON OPTIONES  //////////////////////////
@@ -94,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let isCartOpen = false;
 
     document.querySelector('#bag-icon-header').addEventListener('click', () => {
-        carrito.style.right = '-5em';
+        carrito.style.right = '0';
         isCartOpen=true
     });
 
@@ -118,7 +110,47 @@ document.addEventListener("DOMContentLoaded", function(){
         }
         this.closest('#car-products').style.right = '-55em';
     })
+
+    ////////////////  CARGAR NEW PRODUCTS  //////////////////////////
+    try{
+        const products = await fetchProducts()
+        cargarNewItems(products.slice(0,3))
+    }catch(error){
+        console.error("Error al cargar los productos", error)
+    }
+
 });
+
+
+function cargarNewItems(relevantsProduct){
+    const template = document.getElementById('container-itemspreview');
+    renderProductCard(template, "product-principal", relevantsProduct[0]);
+    renderProductCard(template, "products-secundary", relevantsProduct[1],0);
+    renderProductCard(template, "products-secundary", relevantsProduct[2],1);
+}
+
+
+function renderProductCard(template,containerSelector, product, index=0) {
+
+    const container = template.getElementsByClassName(containerSelector)[index];
+    container.style.cursor = "pointer";
+
+    container.addEventListener("click", function() {
+        sessionStorage.setItem("products", JSON.stringify([product]));
+        window.location.href = `../pages/producto.html?id=${product.id}`;
+    })
+    const img = container.querySelector("img");
+    const info = container.querySelectorAll("p");
+
+    if (product) {
+        img.src = product.images[0].url;
+        if (info[0]) info[0].innerHTML = `${product.categories[0]} - ${product.meta["coleccion"]}`;
+        if (info[1]) info[1].innerHTML = `$${product.meta["precio"]} MXN`;
+    } else {
+        img.src = 'assets/placeholder.jpg'; 
+    }
+}
+
 
 function loadHeaderWhite(){
     document.documentElement.style.setProperty('--color-primario', 'black');

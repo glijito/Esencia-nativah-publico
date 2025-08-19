@@ -270,7 +270,7 @@
 
         <div id="car-products">
             <div id="header">
-                <h1>Carrito</h1>
+                <p>Carrito de compras</p>
             </div>
             <div id="container-products">
                 <div id="product-empty-load">
@@ -284,41 +284,49 @@
                         <img >
                     </div>
                     <div class="information-product">
-                        <p class="product-name">Nombre del producto</p>
-                        <p class="product-price">Precio: $500</p>
+                        <div class="delete-product">
+                            <p class="product-name">Nombre del producto</p>
+                            <img src="../assets/img/car-images/trash.svg">
+                        </div>
                         <div class="controls-count-item">
-                            <img class="minus-product" src="../assets/img/car-images/menos.png">
-                            <p class="count-product">0</p>
-                            <img class="plus-product" src="../assets/img/car-images/agregar.png">
+                            <div class="information-cost-item">
+                                <p class="product-price">Precio: $500</p>
+                                <p class="product-total">$500</p>
+                                <p class="product-descount">%10</p>
+                            </div>
+                            <select name="select-quanty-items" class="select-quanty-items"></select>
                         </div>
                     </div>
-                    <div class="delete-product">
-                        <img src="../assets/img/car-images/trash.png">
-                    </div>
+                    
                 </div>
             </template>
             <div id="subtotal-information">
                 <div>
-                    <div id="subtotal">
-                        <p>Subtotal</p>
-                        <p>$</p>
+                    <div id="subtotal" class="row-information-prices row-information-style">
+                        <p>Costo total del producto:</p>
+                        <p id="price-subtotal">$</p>
                     </div>
-                    <div id="total">
-                        <p>Total</p>
-                        <p>$</p>
+                     <div id="envio"  class="row-information-prices row-information-style">
+                        <p>Costo de envio:</p>
+                        <p id="price-envio">$200</p>
+                    </div>
+                    <div id="total"  class="row-information-prices">
+                        <diV id="total-information" class="row-information-style">
+                            <p>Total</p>
+                            <p>(IVA incluido)</p>
+                        </diV>
+                        <div id="total-price">$</div>
                     </div>
                 </div>
-                <div id="information-leyend">
-                    <p>Todos los productos, en sus precios finales ya incluyen iva,<br> por lo que 
-                        puedes pedir tu factura CFDI</p>
+                <div id="buttons-information">
+                    <button id="pay-car">HACER EL PEDIDO</button>
+                    <p id="close-car">CONTINUAR COMPRANDO</p>
                 </div>
-                <button id="pay-car">IR A PAGAR</button>
             </div>
         </div>
 
         <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
         <script src="../js/conectors/product-conect.js" type="module"></script>
-        <script src="../js/loaders/loadingAnimation.js" type="module"></script>
         <script src="../js/carrito.js" type="module"></script>
         <script src="../js/router-util.js" type="module"></script>
         <script src="../js/shop.js" type="module"></script>

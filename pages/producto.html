@@ -19,7 +19,7 @@
         <section class="hero">
             <header>
                 <div id="menu-nativa-phone"></div>
-                <a href="../index.html"><div id="logo-nativa"></div></a>
+                <div id="logo-nativa"></div>
                 <nav>
                     <ul>
                         <li><a href="#">TIENDA</a></li>
@@ -47,14 +47,14 @@
                     <img class="producto-principal" src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="">
                     <img class="producto-secundary" src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="">
                     <img class="producto-secundary" src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="">
-                    <img class="producto-secundary" src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="">
+                    <img class="producto-secundary" alt="">
                 </div>
                 <div id="container-images-product-phone">
                     <img class="producto-principal" src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="">
                     <div class="container-secundary-images">  
                         <img class="producto-secundary" src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="">
                         <img class="producto-secundary" src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="">
-                        <img class="producto-secundary" src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="">
+                        <img class="producto-secundary" alt="">
                     </div>
                 </div>
                 <div id="container-information-product">
@@ -73,7 +73,7 @@
                     </div>
                     <div class="container-item-desktop">
                         <div class="container-buttons">
-                            <button id="add-to-cart">AGREGAR AL CARRITO</button>
+                            <button class="add-to-cart">AGREGAR AL CARRITO</button>
                             <p>COMPRAR AHORA</p>
                         </div>
                         <div class="container-descripcion-product">
@@ -98,7 +98,7 @@
                     <p class="price-product">$500 MXN</p>
                     <p class="information-relevant">Envio gratis a parti de $5000 pesos</p>
                     <div class="container-buttons">
-                            <button id="add-to-cart">AGREGAR AL CARRITO</button>
+                            <button class="add-to-cart">AGREGAR AL CARRITO</button>
                             <button>COMPRAR AHORA</button>
                     </div>
                     <div class="id-talla-pieza-phone">
@@ -124,66 +124,23 @@
             <header>
                 <h2>También te podría gustar</h2>
             </header>
-            <article class="container-product-list">
-                <div class="product-card">
-                    <img src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="Producto 1">
-                    <p>Collar de plata</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?</p>
-                    <p>$500 MXN</p>
-                    <a href="./producto.html"><button>COMPRAR</button></a>
-                </div>
-                <div class="product-card">
-                    <img src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="Producto 1">
-                    <p>Collar de plata</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?</p>
-                    <p>$500 MXN</p>
-                    <a href="./producto.html"><button>COMPRAR</button></a>
-                </div>
-                <div class="product-card">
-                    <img src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="Producto 1">
-                    <p>Collar de plata</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?</p>
-                    <p>$500 MXN</p>
-                    <a href="./producto.html"><button>COMPRAR</button></a>
-                </div>
-                <div class="product-card">
-                    <img src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="Producto 1">
-                    <p>Collar de plata</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?</p>
-                    <p>$500 MXN</p>
-                    <a href="./producto.html"><button>COMPRAR</button></a>
-                </div>
-                <div class="product-card">
-                    <img src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="Producto 1">
-                    <p>Collar de plata</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?</p>
-                    <p>$500 MXN</p>
-                    <a href="./producto.html"><button>COMPRAR</button></a>
-                </div>
-                
-            </article>
+            <article class="container-product-list"></article>
         </section>
         <section class="container-products-section">
             <header>
                 <h2>Vistos recientemente</h2>
             </header>
-            <article class="container-product-list">
-                <div class="product-card">
-                    <img src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="Producto 1">
-                    <p>Collar de plata</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?</p>
-                    <p>$500 MXN</p>
-                    <a href="./producto.html"><button>COMPRAR</button></a>
-                </div>
-                 <div class="product-card">
-                    <img src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="Producto 1">
-                    <p>Collar de plata</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?</p>
-                    <p>$500 MXN</p>
-                    <a href="./producto.html"><button>COMPRAR</button></a>
-                </div>
-            </article>
+            <article class="container-product-list"></article>
         </section>
+        <template id="template-product">
+            <div class="product-card">
+                <img src="../assets/img/tienda/anillo_cuadrado_prueba.svg" alt="Producto 1">
+                <p id="product-name">Collar de plata</p>
+                <p id="product-descrip">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, blanditiis?</p>
+                <p id="product-price">$500 MXN</p>
+                <a id="boton-comprar"><button>COMPRAR</button></a>
+            </div>
+        </template>
         <footer class="footer-nativah">
             <div class="footer-header">
                 <img src="../assets/img/logoNativah_blanco.svg" alt="Esencia Nativah" class="logo-footer">
@@ -303,7 +260,7 @@
 
         <div id="car-products">
             <div id="header">
-                <h1>Carrito</h1>
+                <p>Carrito de compras</p>
             </div>
             <div id="container-products">
                 <div id="product-empty-load">
@@ -317,35 +274,44 @@
                         <img >
                     </div>
                     <div class="information-product">
-                        <p class="product-name">Nombre del producto</p>
-                        <p class="product-price">Precio: $500</p>
+                        <div class="delete-product">
+                            <p class="product-name">Nombre del producto</p>
+                            <img src="../assets/img/car-images/trash.svg">
+                        </div>
                         <div class="controls-count-item">
-                            <img class="minus-product" src="../assets/img/car-images/menos.png">
-                            <p class="count-product">0</p>
-                            <img class="plus-product" src="../assets/img/car-images/agregar.png">
+                            <div class="information-cost-item">
+                                <p class="product-price">Precio: $500</p>
+                                <p class="product-total">$500</p>
+                                <p class="product-descount">%10</p>
+                            </div>
+                            <select name="select-quanty-items" class="select-quanty-items"></select>
                         </div>
                     </div>
-                    <div class="delete-product">
-                        <img src="../assets/img/car-images/trash.png">
-                    </div>
+                    
                 </div>
             </template>
             <div id="subtotal-information">
                 <div>
-                    <div id="subtotal">
-                        <p>Subtotal</p>
-                        <p>$</p>
+                    <div id="subtotal" class="row-information-prices row-information-style">
+                        <p>Costo total del producto:</p>
+                        <p id="price-subtotal">$</p>
                     </div>
-                    <div id="total">
-                        <p>Total</p>
-                        <p>$</p>
+                     <div id="envio"  class="row-information-prices row-information-style">
+                        <p>Costo de envio:</p>
+                        <p id="price-envio">$200</p>
+                    </div>
+                    <div id="total"  class="row-information-prices">
+                        <diV id="total-information" class="row-information-style">
+                            <p>Total</p>
+                            <p>(IVA incluido)</p>
+                        </diV>
+                        <div id="total-price">$</div>
                     </div>
                 </div>
-                <div id="information-leyend">
-                    <p>Todos los productos, en sus precios finales ya incluyen iva,<br> por lo que 
-                        puedes pedir tu factura CFDI</p>
+                <div id="buttons-information">
+                    <button id="pay-car">HACER EL PEDIDO</button>
+                    <p id="close-car">CONTINUAR COMPRANDO</p>
                 </div>
-                <button id="pay-car">IR A PAGAR</button>
             </div>
         </div>
 

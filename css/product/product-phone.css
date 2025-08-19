@@ -61,8 +61,8 @@
     }
 
     .producto-principal{
-        width: 100vw;
         height: 25rem;
+        padding: 0.7em;
     }
 
     .container-secundary-images {

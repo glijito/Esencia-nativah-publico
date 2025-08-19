@@ -369,7 +369,7 @@ section.hero > header nav a {
 }
 
 
-/***************** GENERAL CAR SHOP*******************/
+/********************** GENERAL CAR SHOP*********************/
 /************************************************************/
 /************************************************************/
 
@@ -378,25 +378,26 @@ section.hero > header nav a {
     flex-direction: column;
     background-color: #ffffff;
     position: fixed;
-    width: 30%;
+    width: 25em;
     box-shadow: -14px 2px 44px -14px rgba(0,0,0,0.75);
     z-index: 2000;
     height: 100%;
     top: 0;
-    right: -35em;
+    right: -25em;
     transition: right 0.3s ease;
 }
 
-#car-products h1{
-    font-size: 2em;
-    font-weight: bold;
-    margin: 20px 20px;
+#car-products #header p{
+    font-size: 1.3em;
+    font-weight: 400;
+    width: max-content;
+    margin: 1.5em auto;
 }
 
 #car-products #container-products{
     display: flex; 
     flex-direction: column;
-    height: 65%;
+    height: 70%;
     margin: 10px 20px;
     gap: 10px;
     overflow-y: auto;
@@ -405,7 +406,7 @@ section.hero > header nav a {
 #car-products #container-products .product-on-list{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: start;
 }
 
 .product-on-list .img-product {
@@ -417,52 +418,72 @@ section.hero > header nav a {
     background-image: url('../assets/img/piezas_unicas_personalizadas_aretes.jpg');
     background-size: cover;
     background-position: center;
-    border-radius: 1.5em;
     width: 100px;
     height: 100px;
 }
 
+.product-on-list .delete-product{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .product-on-list .delete-product img{
-    width: 30px;
-    height: 30px;
+    width: 10px;
+    height: 10px;
     cursor: pointer;
 }
 
 
 .product-on-list .information-product{
     display: flex;
+    flex: 1;
     flex-direction: column;
-    justify-content: left;
-    height: max-content;
-    margin: 0 1.5em;
+    justify-content: space-between;
+    margin: 0 1em;
 }
 
 
 .product-on-list .information-product .product-name{
-    font-size: 1em;
-    font-weight: bold;
-    margin-bottom: 2px;
+    font-size: 0.6em;
+    font-weight: 500;
+    text-align: center;
 }
 
-.product-on-list .information-product .product-price{
+.product-on-list .information-cost-item .product-price{
     font-size: 0.9em;
+    font-weight: 600;
+}
+
+.product-on-list .information-cost-item .product-total{
+    font-size: 0.6em;
+    text-align: center;
+    text-decoration: line-through;
     font-weight: lighter;
-    margin-bottom: 2px;
+}
+
+.product-on-list .information-cost-item .product-descount{
+    font-size: 0.6em;
+    color:#C52462 ;
+    border: 1px solid #C52462 ;
+    padding: 1px;
 }
 
 .product-on-list .information-product .controls-count-item{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items:center;
     justify-content: space-between;
-    margin: 0 1em;
-    gap: 10px;
+    border-bottom: 1px solid #ccc;
 }
 
-.controls-count-item .minus-product {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
+.product-on-list .information-product .controls-count-item .information-cost-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap:15px ;
 }
 
 .controls-count-item .count-product{
@@ -472,46 +493,82 @@ section.hero > header nav a {
     padding: 5px;
 }
 
-.controls-count-item .plus-product {
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-}
-
-
 #subtotal-information {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 1em;
-  box-shadow: -1px -18px 24px -8px rgba(0,0,0,0.75);
+  padding: 0.5em;
+  border-top: 1px solid #ccc;
+  margin: 0 0.6em;
   width: 100%;
 }
 
-#subtotal-information #subtotal p{
-    font-size: 0.7em;
-    font-weight: lighter;
-    margin-bottom: 1em;
+.row-information-prices{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 2em;
+    height: max-content;
 }
 
-#subtotal-information #total p{
-    font-size: 1em;
-    font-weight: bold;
+.row-information-style p{
+    font-size: 0.65em;
+    font-weight: 500;    
 }
 
-#subtotal-information #information-leyend p{
-    font-size: 0.8em;
-    font-weight:400;
+#subtotal p{
+    margin: 0.5em 0;
+    padding: 0;
 }
 
-#subtotal-information #pay-car{
-    border-radius: 2em;
-    background-color: #05ad1b;
+#subtotal-information #total-information p{
+    height: max-content;
+    margin: 0;
+}
+
+#subtotal-information #total-information p:nth-child(1){
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+#subtotal-information #total-information p:nth-child(2){
+    font-size: 0.6em;
+    font-weight:lighter;
+}
+
+#subtotal-information #total #total-price{
+    font-size: 0.9em;
+    font-weight:600;
+}
+
+#buttons-information{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    margin-right: 2em;
+}
+
+#buttons-information #pay-car{
+    background-color: #232323;
     color: white;
     cursor: pointer;
-    padding: 1em 3em;
-    margin-left: 20%;
-    border: 1px solid #ccc;
+    border: none;
+    margin-bottom: 0.8em;
+    padding: 1em 1em;
+}
+
+#buttons-information #close-car{
+    color: #232323;
+    cursor: pointer;
+    font-weight: 600;
+    width: max-content;
+    margin: 0 auto;
+    transition: color 0.3s ease;
+    border-bottom:#C52462 1px solid;
+}
+
+#buttons-information #close-car:hover{
+    color: #C52462;
 }
 
 #container-products #product-empty-load{
