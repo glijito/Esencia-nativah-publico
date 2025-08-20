@@ -4,15 +4,35 @@ import { fetchProducts } from './conectors/product-conect.js';
 document.addEventListener('DOMContentLoaded', function() {
 
     ////////////// EVENTOS PARA CARRUSEL HERO BANNER /////////////////////////////
-    document.getElementById('prev').addEventListener('click', function() {
-        console.log('Anterior');
-    });
+    const BASE = "assets/img/home/";
+    const IMGS = [BASE+"joya2.png", BASE+"joya3.png", BASE+"joya1.png"];
+
+    const img   = document.querySelector("figure .carrusel-img"); // <figure><img class="carrusel-img"></figure>
+    const prev  = document.getElementById("prev");
+    const next  = document.getElementById("next");
+
+    let idx = 0;
+    let animando = false;
+
+    IMGS.forEach(src => { const i = new Image(); i.src = src; });
+    img.src = IMGS[idx];
+
+    function mostrar(nuevoIdx){
+        if (animando) return;          // evita clics rápidos
+        animando = true;
+        img.classList.add("hide");
+        img.addEventListener("transitionend", () => {
+            idx = (nuevoIdx + IMGS.length) % IMGS.length;  // wrap
+            img.src = IMGS[idx];
+            void img.offsetWidth;
+            img.classList.remove("hide");
+            img.addEventListener("transitionend", () => { animando = false; }, { once: true });
+        }, { once: true });
+    }
+
+    prev.addEventListener("click", () => mostrar(idx - 1));
+    next.addEventListener("click", () => mostrar(idx + 1));
     
-    document.getElementById('next').addEventListener('click', function() {
-        console.log('Siguiente');
-    });
-
-
     ///////////// EVENTOS PARA CARRUSEL PRODUCTOS DESTACADOS ////////////////////
     function actualizarFlechas() {
         btnAnterior.disabled = contenedor.scrollLeft <= 0;

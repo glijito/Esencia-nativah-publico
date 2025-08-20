@@ -99,6 +99,11 @@ document.addEventListener("DOMContentLoaded", async function(){
         }
     })
 
+    document.querySelector('#close-car').addEventListener('click', () => {
+        carrito.style.right = '-55em';
+        isCartOpen = false;
+    })
+
     ////////////////  COMPRA DE PRODUCTOS ON SHOP  //////////////////////////
     document.querySelector("#pay-car").addEventListener("click", function() {
         if(!buyShopCarItems()){

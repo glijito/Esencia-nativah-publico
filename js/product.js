@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", async function(){
 
     //////////////////////////AGREGAR AL CARRITO DE COMPRAS /////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////
-    const addToCartButton = document.querySelectorAll("add-to-cart");
+    const addToCartButton = document.querySelectorAll(".add-to-cart");
     addToCartButton.forEach(addtocart =>{
         addtocart.addEventListener("click", function() {
             if(product){

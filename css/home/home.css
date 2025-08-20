@@ -85,6 +85,15 @@ footer nav.slider button {
   cursor: pointer;
 }
 
+.carrusel-img{
+  opacity: 1;
+  transition: opacity .5s ease;
+  will-change: opacity;
+}
+
+.carrusel-img.hide{ opacity: 0; }
+
+
 
 /****************SECCION CARRUSEL **************/
 
