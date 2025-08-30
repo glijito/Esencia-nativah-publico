@@ -1,5 +1,5 @@
 import {loadItemsOnCarrito} from "./carrito.js";
-import {fetchProductsbyCategory} from "./conectors/product-conect.js";
+import {fetchProductsbyCategory,buyItemShort} from "./conectors/product-conect.js";
 
 
 document.addEventListener("DOMContentLoaded", async function(){
@@ -25,9 +25,13 @@ document.addEventListener("DOMContentLoaded", async function(){
 
         document.getElementById("title-item").textContent =  `${product.categories[0]} - ${product.meta["coleccion"]}`;
         document.getElementsByClassName("subtitle-item")[1].textContent = `REF: ${product.name}`;
-        document.getElementById("description-product").textContent = product.meta["descripcion"];
+        document.querySelectorAll(".description-product").forEach(elem => {
+            elem.innerHTML = normalizeTextProduct(product.meta["descripcion"]);
+        });
         document.getElementById("price-item").textContent = `$${product.meta["precio"]} MXN`;
-        document.getElementById("detail-product").textContent = product.meta["medida"];
+        document.querySelectorAll(".detail-product").forEach(elem => {
+            elem.innerHTML = product.meta["medida"];
+        });
 
         let imagesGalery =  document.getElementsByClassName("producto-secundary");
         let principalImage =  document.getElementsByClassName("producto-principal");
@@ -49,7 +53,6 @@ document.addEventListener("DOMContentLoaded", async function(){
     addToCartButton.forEach(addtocart =>{
         addtocart.addEventListener("click", function() {
             if(product){
-                console.log('Producto agregado al carrito:', product);
                 let carritoActual = JSON.parse(localStorage.getItem('carrito')) || [];
                 carritoActual.push({
                     product_name: `${product.categories[0]} - ${product.meta["coleccion"]}`,
@@ -74,6 +77,38 @@ document.addEventListener("DOMContentLoaded", async function(){
         });
     })
 
+    //////////////////////////COMPRAR DIRECTAMENTE /////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////
+    const buyItemNow = document.querySelectorAll(".buy-now-button");
+    buyItemNow.forEach(buyNow => {
+        buyNow.addEventListener("click", async function() {
+            if(product){
+                Swal.fire({
+                    title: 'Realizando la compra',
+                    html: 'Por favor espera un momento',
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+
+                try{
+                    const response =await buyItemShort(product);
+                    if(!response || !response.ok || (response.count ?? 0) < 1 ) {
+                        console.error('Error al realizar la compra:', response);
+                        Swal.fire("Algo ocurrio, intente mas tarde");
+                    }
+                    window.location.href ='https://esencianativah.com/wp/checkout/';
+                }catch(error){
+                    console.error('Error al realizar la compra:', error);
+                    Swal.fire("Algo ocurrio, intente mas tarde");
+                }finally{
+                    Swal.close();
+                }
+            }
+        });
+    })
 
     //////////////////////////CARGAR PRODUCTOS PARECIDOS/////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////
@@ -88,8 +123,10 @@ document.addEventListener("DOMContentLoaded", async function(){
                 clone.getElementById('product-name').textContent = `${item.categories[0]} - ${item.meta["coleccion"]}`;
                 clone.getElementById('product-descrip').textContent = item.meta["descripcion"];
                 clone.getElementById('product-price').textContent = `$${item.meta["precio"]} MXN`;
-                
-                clone.getElementById('boton-comprar').href = `../pages/producto.html?id=${item.id}`;
+                clone.getElementById('boton-comprar').addEventListener("click", (e) => {
+                    e.preventDefault();
+                    categoryOfpreviewProduct(item);
+                });
                 containerItemsCategory.appendChild(clone);
             }
         })
@@ -119,12 +156,64 @@ document.addEventListener("DOMContentLoaded", async function(){
                 clone.getElementById('product-name').textContent = `${item.categories[0]} - ${item.meta["coleccion"]}`;
                 clone.getElementById('product-descrip').textContent = item.meta["descripcion"];
                 clone.getElementById('product-price').textContent = `$${item.meta["precio"]} MXN`;
-                clone.getElementById('boton-comprar').href = `../pages/producto.html?id=${item.id}`;
+                clone.getElementById('boton-comprar').addEventListener("click", (e) => {
+                    e.preventDefault();
+                    categoryOfpreviewProduct(item);
+                });
                 containerItemVistos.appendChild(clone);
             });
     } else {
-        // Si solo hay uno, oculta la sección
         document.querySelectorAll(".container-products-section")[1].style.display = "none";
     }
 
+    
+    setupToggles()
 })
+
+function setupToggles() {
+    document.querySelectorAll('.item-list-information').forEach(item => {
+        let content = item.querySelectorAll('.description-product, .detail-product');
+        if (item) {
+            item.addEventListener('click', function() {
+                content.forEach(el => el.classList.toggle('expandible-activo'));
+            });
+        }
+    });
+}
+
+async function categoryOfpreviewProduct(item){
+
+    let productosGuardados = JSON.parse(sessionStorage.getItem("products") || "[]");
+    let pivoteCategoria = productosGuardados[0]?.categories?.[0];
+    if(item.categories[0] !== pivoteCategoria) {
+        const products = await fetchProductsbyCategory(item.categories[0]);
+        sessionStorage.setItem("products", JSON.stringify(products));
+    }
+    window.location.href = `../pages/producto.html?id=${item.id}`;
+}
+
+function normalizeTextProduct(text){
+    let textResult = "";
+    let pivotText = 0;
+    text = text.replace(/"/g, '');
+    while (pivotText < text.length) {
+        let finalParagraph = text.indexOf(".", pivotText);
+        if (finalParagraph !== -1) {
+            let fragment = text.slice(pivotText, finalParagraph + 1);
+                let match = fragment.match(/([A-ZÁÉÍÓÚÑ][^:]*):\s/);
+            if (match) {
+                textResult += `<strong>${match[1].trim()}</strong>:`;
+                let afterColon = fragment.slice(match[0].length + 1);
+                textResult += afterColon;
+            } else {
+                textResult += fragment;
+            }
+            textResult += "<br><br>";
+            pivotText = finalParagraph + 1;
+        } else {
+            textResult += text.slice(pivotText);
+            break;
+        }
+    }
+    return textResult;
+}

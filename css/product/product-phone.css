@@ -5,12 +5,18 @@
     }
 
     .detail-product-container .container-items{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .detail-product-container .container-items{
         flex-direction: column;
     }
 
     .detail-product-container .container-items #container-information-product{
         order: 1;
-        width: 90vw;
         margin:1em;
     }
 

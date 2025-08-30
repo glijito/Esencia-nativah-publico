@@ -33,7 +33,6 @@ export async function fetchProductsbyCategory(category) {
     }
 }
 
-
 export async function loadBuyCarrito(products) {
     
     if (!Array.isArray(products) || products.length === 0 ) {
@@ -58,4 +57,31 @@ export async function loadBuyCarrito(products) {
         console.error('Error al cargar el carrito:', error);
         return ;
     }        
+}
+
+export async function buyItemShort(product) {
+
+    if (!product) {
+        console.error('El producto no es válido.');
+        return;
+    }
+
+    try {
+        const response = await fetch("https://esencianativah.com/wp/wp-json/esencia_public/v1/cart/sync", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include',
+            body: JSON.stringify({ items: [{ product_id: product.id, qty: 1 }] })
+        });
+
+        const data = await response.json();
+        console.log('Respuesta del servidor:', data);
+        return data;
+    } catch (error) {
+        console.error('Error al cargar el carrito:', error);
+        return;
+    }
+
 }

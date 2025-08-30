@@ -572,6 +572,22 @@ section.hero > header nav a {
 }
 
 #container-products #product-empty-load{
-    margin-left: 4em;
-    margin-top: 4em;
+    margin-top: 8em;
+}
+
+#container-products #product-empty-load img{
+    width: 25%;
+    height: 25%;
+    margin-left: 38%;
+}
+
+#container-products #product-empty-load h3{
+   text-align: center;
+   font-size: 1.5em;
+}
+
+#container-products #product-empty-load p{
+    font-size: 0.7em;
+    text-align: center;
+    font-weight: 300;
 }

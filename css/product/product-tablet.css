@@ -1,8 +1,4 @@
 @media (min-width: 600px) and (max-width: 1024px){
-    
-    .container-items {
-       height: max-content;
-    }
 
     
     .container-items #container-images-product-desktop{
@@ -14,11 +10,6 @@
         flex-direction: column;
         align-items: start;
         margin-left: 2rem;
-    }
-
-    .detail-product-container{
-        width: max-content;
-        margin: 0 auto;
     }
 
     .producto-principal{

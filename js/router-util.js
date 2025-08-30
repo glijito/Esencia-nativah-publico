@@ -1,9 +1,17 @@
 import {loadItemsOnCarrito,buyShopCarItems} from "./carrito.js";
-import { fetchProducts } from './conectors/product-conect.js';
+import { fetchProducts,fetchProductsbyCategory } from './conectors/product-conect.js';
 
 let isSelectItem = false;
 
 document.addEventListener("DOMContentLoaded", async function(){
+
+
+    //////////////// HOME  DIRECTION //////////////
+    const homeDirection = document.querySelector("#logo-nativa");
+    homeDirection.style.cursor = "pointer";
+    homeDirection.addEventListener("click", () => {
+        window.location.href = "/";
+    });
 
     /////////////// CARRITO DE COMPRAS ////////////////////////////
     loadItemsOnCarrito();
@@ -140,8 +148,9 @@ function renderProductCard(template,containerSelector, product, index=0) {
     const container = template.getElementsByClassName(containerSelector)[index];
     container.style.cursor = "pointer";
 
-    container.addEventListener("click", function() {
-        sessionStorage.setItem("products", JSON.stringify([product]));
+    container.addEventListener("click", async function() {
+        const products= await fetchProductsbyCategory(product.categories[0])
+        sessionStorage.setItem("products", JSON.stringify(products));
         window.location.href = `../pages/producto.html?id=${product.id}`;
     })
     const img = container.querySelector("img");

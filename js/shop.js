@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function(){
     document.querySelector("#title-section").textContent = categoria=== "all" ?  "Tienda" : categoria;
 })
 
-
 async function loadCategoria(categoria){
     try{
         await customElements.whenDefined('dotlottie-wc');

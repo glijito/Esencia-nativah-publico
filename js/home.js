@@ -3,35 +3,49 @@ import { fetchProducts } from './conectors/product-conect.js';
 
 document.addEventListener('DOMContentLoaded', function() {
 
+
     ////////////// EVENTOS PARA CARRUSEL HERO BANNER /////////////////////////////
     const BASE = "assets/img/home/";
     const IMGS = [BASE+"joya2.png", BASE+"joya3.png", BASE+"joya1.png"];
 
-    const img   = document.querySelector("figure .carrusel-img"); // <figure><img class="carrusel-img"></figure>
+    const img   = document.querySelector("figure .carrusel-img");
     const prev  = document.getElementById("prev");
     const next  = document.getElementById("next");
 
     let idx = 0;
+    let intervalId = null;
     let animando = false;
 
     IMGS.forEach(src => { const i = new Image(); i.src = src; });
     img.src = IMGS[idx];
 
-    function mostrar(nuevoIdx){
-        if (animando) return;          // evita clics rápidos
+    function mostrar(nuevoIdx, auto = false){
+        if (animando) return;
         animando = true;
-        img.classList.add("hide");
-        img.addEventListener("transitionend", () => {
-            idx = (nuevoIdx + IMGS.length) % IMGS.length;  // wrap
+        img.style.transition = "opacity 0.7s";
+        img.style.opacity = 0;
+        img.addEventListener("transitionend", function handler() {
+            img.removeEventListener("transitionend", handler);
+            idx = (nuevoIdx + IMGS.length) % IMGS.length;
             img.src = IMGS[idx];
             void img.offsetWidth;
-            img.classList.remove("hide");
-            img.addEventListener("transitionend", () => { animando = false; }, { once: true });
+            img.style.opacity = 1;
+            img.addEventListener("transitionend", function handler2() {
+                img.removeEventListener("transitionend", handler2);
+                animando = false;
+            }, { once: true });
         }, { once: true });
+        if (!auto) reiniciarIntervalo();
+    }
+
+    function reiniciarIntervalo() {
+        if (intervalId) clearInterval(intervalId);
+        intervalId = setInterval(() => mostrar(idx + 1, true), 3000);
     }
 
     prev.addEventListener("click", () => mostrar(idx - 1));
     next.addEventListener("click", () => mostrar(idx + 1));
+    reiniciarIntervalo();
     
     ///////////// EVENTOS PARA CARRUSEL PRODUCTOS DESTACADOS ////////////////////
     function actualizarFlechas() {

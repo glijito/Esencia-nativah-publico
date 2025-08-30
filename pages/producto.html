@@ -74,22 +74,22 @@
                     <div class="container-item-desktop">
                         <div class="container-buttons">
                             <button class="add-to-cart">AGREGAR AL CARRITO</button>
-                            <p>COMPRAR AHORA</p>
+                            <p id="buy-now" class="buy-now-button">COMPRAR AHORA</p>
                         </div>
                         <div class="container-descripcion-product">
                             <div class="item-list-information">
-                                <div class="row-title-information">
+                                <div class="row-title-information" >
                                     <p class="title-item">Descripción</p>
                                     <img src="../assets/img/despliegue_abajo_negro.svg">
                                 </div>
-                                <div id="description-product"></div>
+                                <div class="description-product">""</div>
                             </div>
                             <div class="item-list-information">
                                 <div class="row-title-information">
                                     <p class="title-item">Características</p>
                                     <img src="../assets/img/despliegue_abajo_negro.svg">
                                 </div>
-                                <div id="detail-product"></div>
+                                <div class="detail-product">""</div>
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                     <p class="information-relevant">Envio gratis a parti de $5000 pesos</p>
                     <div class="container-buttons">
                             <button class="add-to-cart">AGREGAR AL CARRITO</button>
-                            <button>COMPRAR AHORA</button>
+                            <button class="buy-now-button">COMPRAR AHORA</button>
                     </div>
                     <div class="id-talla-pieza-phone">
                         <p id="title-talla">Talla</p>
@@ -111,10 +111,12 @@
                         <div class="item-list-information">
                             <p class="title-item">Descripción</p>
                             <img src="../assets/img/despliegue_abajo_negro.svg">
+                             <div class="description-product">""</div>
                         </div>
                         <div class="item-list-information">
                             <p class="title-item">Características</p>
                             <img src="../assets/img/despliegue_abajo_negro.svg">
+                            <div class="detail-product">""</div>
                         </div>
                     </div>
                 </div>
@@ -264,8 +266,9 @@
             </div>
             <div id="container-products">
                 <div id="product-empty-load">
-                    <img src="../assets/img/animation/EmptyBox.gif" style="width: 200px; height: 200px;">
-                    <h3>Tu carrito está vacío</h3>
+                    <img src="../assets/img/bolsa_compras_negro.svg">
+                    <h3>Tu cesta esta vacia</h3>
+                    <p>Los articulos que añadiste<br>se mostraran aquí</p>
                 </div>
             </div>
             <template class="producto-template">

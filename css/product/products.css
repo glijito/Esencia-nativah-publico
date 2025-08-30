@@ -1,13 +1,14 @@
 /****************** DETALLE DEL PRODUCTO  *******************/
 
 .detail-product-container{
-    width: max-content;
     margin: 1rem auto;
 }
 
 .detail-product-container .container-items{
+    width: max-content;
     display: flex;
     flex-direction: row;
+    margin: 0 auto;
 }
 
 .container-items #container-images-product-desktop{
@@ -137,6 +138,29 @@
 
 .container-item-phone{
     display: none;
+}
+
+#buy-now{
+    color: #232323;
+    transition: color 0.5s ease;
+}
+
+#buy-now:hover{
+    color: #C52462;
+}
+
+.description-product,
+.detail-product {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.description-product.expandible-activo,
+.detail-product.expandible-activo {
+  max-height: 500px;
+  overflow: visible;
+  transition: max-height 0.4s ease;
 }
 
 
